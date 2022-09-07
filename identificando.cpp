@@ -12,7 +12,7 @@ int num(char c){
 }
 
 int let(char c){
-    if(((c<'0')||(c>'9'))&&(c!='.')&&(c!=' ')){
+    if(((c<'0')||(c>'9'))&&(c!='.')&&(c!=' ')&&(c!='-')){
         return 1;
     }else{
         return 0;
