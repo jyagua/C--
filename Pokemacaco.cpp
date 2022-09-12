@@ -51,7 +51,7 @@ class Carta{
 int main()
 {
     Carta gorila;
-    
+    gorila.setvida(10);
     cout << "Escolha a sua classe : " << endl;
     cout << "Gorila\nMandril\nMacaco Narigudo" << endl;
 }
