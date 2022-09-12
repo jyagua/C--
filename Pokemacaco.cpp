@@ -14,7 +14,8 @@ using namespace std;
 
 class Carta{
     private:    
-        int vida, poder, agilidade, inteligencia, tipo;
+        int vida, poder, agilidade, inteligencia;
+        char tipo;
     public:
         void setvida(int _vida){
             vida = _vida;
@@ -40,10 +41,10 @@ class Carta{
         int getinteligencia(){
             return inteligencia;
         }
-        void settipo(int _tipo){
+        void settipo(char _tipo){
             tipo = _tipo;
         }
-        int tipo(){
+        char tipo(){
             return tipo;
         }
 };
@@ -52,6 +53,10 @@ int main()
 {
     Carta gorila;
     gorila.setvida(10);
+    gorila.setpoder(10);
+    gorila.setagilidade(4);
+    gorila.setinteligencia(1);
+    gorila.settipo("Pedra");
     cout << "Escolha a sua classe : " << endl;
     cout << "Gorila\nMandril\nMacaco Narigudo" << endl;
 }
