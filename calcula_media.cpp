@@ -1,6 +1,6 @@
 #include <iostream> // std::cout, std::fixed
 #include <iomanip> // std::setprecision
-
+using namespace std;
 struct aluno {
    float nota[3];
    float media;
