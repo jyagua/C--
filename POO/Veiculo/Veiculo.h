@@ -94,7 +94,7 @@ que chame explicitamente o construtor das classes base, um getter e um
 setter, além de um método print, que utiliza o método print da classe 
 base. Crie um driver para testar sua aplicação.*/
 
-class carropasseio:public motor, public veiculo{
+/*class carropasseio:public motor, public veiculo{
     private:
     string modelo, cor;
     public:
@@ -132,4 +132,4 @@ class carropasseio:public motor, public veiculo{
         "======================" << endl;
     }
 
-};
+};*/
