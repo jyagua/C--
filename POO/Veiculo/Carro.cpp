@@ -7,7 +7,7 @@ using namespace std;
 int main(){
     cout << "\nBEM VINDO AO SEU VEICULO " << endl << endl;
     cout << "digite abaixo os dados sobre ele\n" << endl;
-    
+    //teste
     string s;
     int p;
     carropasseio carrin;
