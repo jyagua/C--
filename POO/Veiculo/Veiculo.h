@@ -44,8 +44,8 @@ class veiculo{
     void stats(){
         cout << "Peso: " << peso << endl <<
         "Velocidade Maxima: " << velma << endl <<
-        "preco: " << $ << endl <<
-        "======================" << endl;
+        "Preco: " << $ << endl <<
+        "------- ! -------\n" << endl;
 
     }
 
@@ -85,7 +85,7 @@ class motor{
     void print(){
         cout << "Cilindros: " << cil << endl <<
         "Potencia: " << pot << endl <<
-        "======================" << endl;
+        "------- ! -------\n"<< endl;
     }
 };
 /*Crie a classe CarroPasseio, derivada das classes Veiculo e Motor. 
