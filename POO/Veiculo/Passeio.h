@@ -39,7 +39,7 @@ class carropasseio:public motor, public veiculo{
         print();
         cout << "Modelo: " << modelo << endl <<
         "Cor: " << cor << endl <<
-        "======================" << endl;
+        "------- ! -------\n" << endl;
     }
 
 };
