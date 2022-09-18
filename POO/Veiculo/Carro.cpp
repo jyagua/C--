@@ -5,9 +5,9 @@
 using namespace std;
 
 int main(){
-    cout << "\nBEM VINDO AO SEU VEICULO " << endl << endl;
-    cout << "digite abaixo os dados sobre ele\n" << endl;
-    //teste
+    cout << "\n----- BEM VINDO AO SEU VEICULO -----" << endl;
+    cout << "-- digite abaixo os dados sobre ele --\n" << endl;
+    
     string s;
     int p;
     carropasseio carrin;
@@ -18,6 +18,21 @@ int main(){
     cin >> p;
     cout << endl;
     carrin.setvelma(p);
+    cout << "Quantos cilindros tem o carro? " << endl;
+    cin >> p;
+    carrin.setcil(p);
+    cout << "\nQual o preco do seu carro?" << endl;
+    cin >> p;
+    carrin.set$(p);
+    cout << "\nE qual a potencia do seu veiculo? " << endl;
+    cin >> p;
+    carrin.setpot(p);
+    cout << "\nInforme o modelo :" << endl;
+    getline(cin, s);
+    carrin.setmodelo();
+    cout << "\nPor ultimo, qual a cor do veiculo? " << endl;
+    carrin.setcor();
+    cout << endl;
     carrin.impr();
 }
 
