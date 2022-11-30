@@ -9,12 +9,21 @@ class time{
 
     private:
     string Nome;
-    jogador* Jogadores[11];
+    
     int Vitorias;
     int Derrotas;
     int Empates;
 
     public:
+    jogadorAtaque atacantes[5];
+    time(){
+        Nome = "floresta";
+        Vitorias = 0;
+        Derrotas = 0;
+        Empates = 0;
+
+    }
+
     void setNome(string Nome) {
         this->Nome = Nome;
         } 

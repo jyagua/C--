@@ -8,8 +8,8 @@ using namespace std;
 class partida{
     private:
     string data;
-    time* timeCasa;
-    time* timeVisitante;
+    //time timeCasa;
+    //time timeVisitante;
     int placarCasa;
     int placarVisitante;
 
@@ -17,6 +17,8 @@ class partida{
 
     partida(){
         data = "30/02";
+        time timecasa();
+        time timevisitante();
         placarCasa = 0;
         placarVisitante = 0;
     }
@@ -45,8 +47,8 @@ class partida{
         return this->placarVisitante;
         }
 
-    int getPlacar(){
-        
+    void getPlacar(){
+        cout << getPlacarCasa << "/" << getPlacarVisitante << " ";
     }
 
 
