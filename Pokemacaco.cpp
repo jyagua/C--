@@ -15,7 +15,7 @@ using namespace std;
 class Carta{
     private:    
         int vida, poder, agilidade, inteligencia;
-        char tipo;
+        string tipo;
     public:
         void setvida(int _vida){
             vida = _vida;
@@ -41,10 +41,10 @@ class Carta{
         int getinteligencia(){
             return inteligencia;
         }
-        void settipo(char _tipo){
+        void settipo(string _tipo){
             tipo = _tipo;
         }
-        char tipo(){
+        string tipo(){
             return tipo;
         }
 };
