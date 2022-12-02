@@ -8,23 +8,24 @@ using namespace std;
 class partida{
     private:
     string data;
-    //time timeCasa;
-    //time timeVisitante;
     int placarCasa;
     int placarVisitante;
 
     public:
 
+    time timeCasa;
+    time timeVisitante;
+
     partida(){
         data = "30/02";
-        time timecasa();
-        time timevisitante();
         placarCasa = 0;
         placarVisitante = 0;
     }
 
     partida(string d){
         data = d;
+        placarCasa = 0;
+        placarVisitante = 0;
     }
 
 
@@ -48,7 +49,7 @@ class partida{
         }
 
     void getPlacar(){
-        cout << getPlacarCasa << "/" << getPlacarVisitante << " ";
+        cout << getPlacarCasa() << "/" << getPlacarVisitante() << " ";
     }
 
 
