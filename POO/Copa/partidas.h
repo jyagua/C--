@@ -10,11 +10,11 @@ class partida{
     string data;
     int placarCasa;
     int placarVisitante;
+    time timeCasa;
+    time timeVisitante;
 
     public:
 
-    time timeCasa;
-    time timeVisitante;
 
     partida(){
         data = "30/02";
@@ -22,11 +22,14 @@ class partida{
         placarVisitante = 0;
     }
 
-    partida(string d){
+    /*partida(string d, string c, string v){
         data = d;
+        timeCasa.setNome(c);
+        timeVisitante.setNome(v);
+
         placarCasa = 0;
         placarVisitante = 0;
-    }
+    }*/
 
 
     void setData(string data) { 
@@ -52,6 +55,14 @@ class partida{
         cout << getPlacarCasa() << "/" << getPlacarVisitante() << " ";
     }
 
+
+    void setTimecasa(time a){
+        timeCasa = a;
+    }
+
+    void setTimevisitante(time b){
+        timeVisitante = b;
+    }
 
 
 

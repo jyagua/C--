@@ -9,15 +9,30 @@ using namespace std;
 int main(){
     cout << "main" << endl;
 
-    partida teste;
+    partida jogo1;
+    /*partida jogo2;
+    partida jogo3;
+    partida jogo4;*/
 
-    teste.timeCasa.atacantes[0].setNome("JoaoFoda");
+    time fla("Flamengo");
+    
+    jogo1.setTimecasa(fla);
+    cout << fla.getNome();
 
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*teste.timeCasa.atacantes[0].setNome("JoaoFoda");
 
     cout << teste.timeCasa.getNome() << endl << teste.timeCasa.atacantes->getNome() << endl;
     teste.getPlacar();
-
 
     /*time *teste = new time;
 

@@ -24,6 +24,13 @@ class time{
 
     }
 
+    time(string n){
+        Nome = n;
+        Vitorias = 0;
+        Derrotas = 0;
+        Empates = 0;
+    }
+
     void setNome(string Nome) {
         this->Nome = Nome;
         } 
