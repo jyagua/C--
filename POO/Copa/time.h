@@ -16,7 +16,7 @@ class time{
 
     public:
     jogadorAtaque atacantes[2];
-    jogadorDefesa zagueiros[2];
+    jogadorDefesa defensor[2];
     jogadorGoleiro goleiro;
     time(){
         Nome = "floresta";
@@ -68,5 +68,14 @@ class time{
 
     void somaEmpates(){
         Empates++;
+    }
+
+    void printTime(){
+        cout << "Time : " << getNome() << endl << "================" << endl;
+        cout << "Goleiro : " << goleiro.getNome() << endl << "================" << endl;
+        cout << "Ala Esquerda : " << atacantes[0].getNome() << endl << "================" << endl;
+        cout << "Ala Direita : " << atacantes[1].getNome() << endl << "================" << endl;
+        cout << "Fixo : " << defensor[0].getNome() << endl << "================" << endl;
+        cout << "Pivo : " << defensor[1].getNome() << endl << "================" << endl;
     }
 };
