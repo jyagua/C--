@@ -47,7 +47,9 @@ class jogador{
     void somaGols(){
         Gols++;
     }
-
+    friend class jogadorGoleiro;
+    friend class jogadorDefesa;
+    friend class jogadorAtaque;
 };
 
 class jogadorGoleiro:virtual public jogador{
