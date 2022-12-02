@@ -15,7 +15,9 @@ class time{
     int Empates;
 
     public:
-    jogadorAtaque atacantes[5];
+    jogadorAtaque atacantes[2];
+    jogadorDefesa zagueiros[2];
+    jogadorGoleiro goleiro;
     time(){
         Nome = "floresta";
         Vitorias = 0;

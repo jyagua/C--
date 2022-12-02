@@ -10,14 +10,14 @@ int main(){
     cout << "main" << endl;
 
     partida jogo1;
-    /*partida jogo2;
-    partida jogo3;
-    partida jogo4;*/
+    partida jogo2;
 
-    time fla("Flamengo");
+    time afo("Afogados");
+    time flo();
+    time lag("Lagarto");
+    time toc("Tocantinopolis");
+
     
-    jogo1.setTimecasa(fla);
-    cout << fla.getNome();
 
     
     
