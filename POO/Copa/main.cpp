@@ -62,8 +62,6 @@ int main(){
     }else if(y == '2'){
 
     }
-
-
    }
     
     
@@ -74,7 +72,40 @@ int main(){
     
     
     
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*teste.timeCasa.atacantes[0].setNome("JoaoFoda");
 
     cout << teste.timeCasa.getNome() << endl << teste.timeCasa.atacantes->getNome() << endl;
