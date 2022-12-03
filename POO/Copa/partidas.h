@@ -52,7 +52,7 @@ class partida{
         }
 
     void getPlacar(){
-        cout << getPlacarCasa() << "/" << getPlacarVisitante() << " ";
+        cout << timeCasa.getNome() << ": "<< getPlacarCasa() << "/" << timeVisitante.getNome() << ": "<< getPlacarVisitante() << endl;
     }
 
 
@@ -63,7 +63,10 @@ class partida{
     void setTimevisitante(time b){
         timeVisitante = b;
     }
-
+    void printPartida(){
+        cout << "Time de Casa: " << timeCasa.getNome() << endl << "Time Visitante: " << timeVisitante.getNome() << endl;
+        getPlacar();
+    }
 
 
 };
