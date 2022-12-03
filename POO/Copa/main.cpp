@@ -17,6 +17,8 @@ int main(){
     time lag("Lagarto");
     time toc("Tocantinopolis");
 
+    afo.printTime();
+
     
 
     
