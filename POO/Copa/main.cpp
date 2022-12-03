@@ -11,6 +11,7 @@ int main(){
     cout << "main" << endl;
 
     char x, y;
+    int a, b;
     //PARTIDAS PADRAO
     partida jogo1;
     partida jogo2;
@@ -27,10 +28,43 @@ int main(){
     //jogo1.addGolcasa(); == COLOCAR UM GOL PRO TIME DE CASA
     /*
     cout << "Teste: aperte F" << endl;  
-    x = getch(); == pegar o caractere
+    x = getch(); == PEGAR UM CARACTERE
     cout << "Operacao terminada";
     */
+   system("clear||cls");
+   MENU:
+   cout << "BEM VINDO AO BOMBA PATCH EDICAO C++ :)" << endl;
+   cout << "=======================================" << endl;
+   cout << "             MENU PRINCIPAL           " << endl;
+   cout << "Digite 1 para ver os times atuais" << endl;
+   cout << "Digite 2 para criar um time" << endl;
+   cout << "Digite 3 para criar uma partida" << endl;
+   cout << "Digite 4 para ver os jogadores de um time" << endl;
 
+   cout << "Digite 0 para parar o programa" << endl;
+
+    x = getch();
+
+   if(x == '0'){
+    goto FIM;
+   }
+
+   if(x == '1'){
+    system("clear||cls");
+
+    cout << afo.getNome() << endl << flo.getNome() << endl << lag.getNome() << endl << toc.getNome() << endl;
+    cout << "Digite 1 para voltar ao menu" << endl;
+    cout << "Digite 2 para ver os jogadores de um time" << endl;
+    y = getch();
+    if(y == '1'){
+        system("clear||cls");
+        goto MENU;
+    }else if(y == '2'){
+
+    }
+
+
+   }
     
     
     
@@ -54,4 +88,8 @@ int main(){
 
     cout << teste->getNome() << endl;*/
 
+    FIM:
+    if(x == '0'){
+    cout << "tchau";
+    }
 }
