@@ -2,6 +2,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <conio.h>
 #include "partidas.h"
 using namespace std;
 
@@ -9,23 +10,26 @@ using namespace std;
 int main(){
     cout << "main" << endl;
 
+    char x, y;
+    //PARTIDAS PADRAO
     partida jogo1;
     partida jogo2;
-
+    //TIMES PADRAO
     time afo("Afogados");
-    time flo();
+    time flo("Floresta");
     time lag("Lagarto");
     time toc("Tocantinopolis");
-
+    //ATRIBUINDO TIMES AS PARTIDAS
     jogo1.setTimecasa(afo);
-    jogo1.setTimevisitante(lag);
-    jogo1.getPlacar();
+    jogo1.setTimevisitante(flo);
 
-    jogo1.addGolcasa();
-
-    jogo1.getPlacar();
-
-    
+    //jogo1.getPlacar(); == PLACAR DA PARTIDA
+    //jogo1.addGolcasa(); == COLOCAR UM GOL PRO TIME DE CASA
+    /*
+    cout << "Teste: aperte F" << endl;  
+    x = getch(); == pegar o caractere
+    cout << "Operacao terminada";
+    */
 
     
     
