@@ -17,7 +17,13 @@ int main(){
     time lag("Lagarto");
     time toc("Tocantinopolis");
 
-    afo.printTime();
+    jogo1.setTimecasa(afo);
+    jogo1.setTimevisitante(lag);
+    jogo1.getPlacar();
+
+    jogo1.addGolcasa();
+
+    jogo1.getPlacar();
 
     
 

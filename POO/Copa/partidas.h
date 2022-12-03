@@ -22,14 +22,20 @@ class partida{
         placarVisitante = 0;
     }
 
-    /*partida(string d, string c, string v){
+    partida(string d){
+        data = d;
+        placarCasa = 0;
+        placarVisitante = 0;
+    }
+
+    partida(string d, string c, string v){
         data = d;
         timeCasa.setNome(c);
         timeVisitante.setNome(v);
 
         placarCasa = 0;
         placarVisitante = 0;
-    }*/
+    }
 
 
     void setData(string data) { 
@@ -47,12 +53,21 @@ class partida{
     void setPlacarVisitante(int placarVisitante) {
         this->placarVisitante = placarVisitante;
         } 
+
+    void addGolcasa(){
+        placarCasa++;
+    }
+
+    void addGolvisita(){
+        placarVisitante++;
+    }
+
     int getPlacarVisitante() {
         return this->placarVisitante;
         }
 
     void getPlacar(){
-        cout << timeCasa.getNome() << ": "<< getPlacarCasa() << "/" << timeVisitante.getNome() << ": "<< getPlacarVisitante() << endl;
+        cout << timeCasa.getNome() << ": "<< getPlacarCasa() << " / " << timeVisitante.getNome() << ": "<< getPlacarVisitante() << endl;
     }
 
 
