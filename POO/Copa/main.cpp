@@ -35,7 +35,7 @@ int main(){
     */
    MENU:
    system("clear||cls");
-   cout << "BEM VINDO AO BOMBA PATCH EDICAO C++ :)" << endl;
+   cout << "BEM VINDO AO BOMBA PATCH C++ EDITION :)" << endl;
    cout << "=======================================" << endl;
    cout << "             MENU PRINCIPAL           " << endl;
    cout << "Digite 1 para ver os times atuais" << endl;
@@ -56,9 +56,10 @@ int main(){
     goto TIMECRIAR;
    }/*else if(x == '3'){
     goto PARTIDACRIAR;
-   }else if(x == '4'){
-    goto JOGADORES;
-   }*/
+   }
+   */else if(x == '4'){
+    goto VERJOGADORES;
+   }
    x = 0;
    TIMENOME:
    if(x == '1'){
@@ -74,16 +75,16 @@ int main(){
     if(x == '1'){
         system("clear||cls");
         goto MENU;
-    }/*else if(x == '2'){
-        goto JOGADORES;
-    }*/
+    }else if(x == '2'){
+        goto VERJOGADORES;
+    }
    }
 
     x = 0;
     TIMECRIAR:
     if(x == '2'){
-
-        cout << "Digite o nome do seu time (ou digite 1 para voltar ao menu): " << endl;
+        cout << endl;
+        cout << "Digite o nome do seu time ou digite 1 para voltar ao menu : " << endl;
         cin >> timenome;
 
         if(a<10){
@@ -106,43 +107,12 @@ int main(){
         goto MENU;
     }
     
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    x = 0;
+    VERJOGADORES:
+    if(x == '2' || x == '4'){
+        cout << endl;
+        afo.printTime();
+    }
 
 
 
@@ -161,6 +131,6 @@ int main(){
 
     FIM:
     if(x == '0'){
-    cout << "tchau :D";
+    cout  << endl << "PROGRAMA ENCERRADO" << endl;
     }
 }
