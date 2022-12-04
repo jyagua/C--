@@ -59,7 +59,11 @@ int main(){
    }
    */else if(x == '4'){
     goto VERJOGADORES;
+   }/*else if(x == '5'){
+    goto CRIARJOGADOR;
    }
+   */
+
    x = 0;
    TIMENOME:
    if(x == '1'){
@@ -107,6 +111,13 @@ int main(){
         goto MENU;
     }
     
+    /*
+    x = 0;
+    PARTIDACRIAR:
+    if(x == '3'){
+
+    }
+    */
     x = 0;
     VERJOGADORES:
     if(x == '2' || x == '4'){
@@ -114,6 +125,13 @@ int main(){
         afo.printTime();
     }
 
+    /*
+    x = 0;
+    CRIARJOGADDOR:
+    if(x == '5'){
+
+    }
+    */
 
 
     /*teste.timeCasa.atacantes[0].setNome("JoaoFoda");
