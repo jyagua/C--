@@ -111,7 +111,7 @@ int main(){
             cout << "Voce atingiu o limite de times!!" << endl;
 
         }
-        _sleep(1000);
+        _sleep(1000.0);
         goto MENU;
     }
     
@@ -157,6 +157,7 @@ int main(){
             }
         }else{
             cout << "Nome errado!" << endl;
+            _sleep(1000.0);
             goto VERJOGADORES;
         }
 
