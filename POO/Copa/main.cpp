@@ -11,7 +11,8 @@ int main(){
     cout << "main" << endl;
 
     char x, y;
-    int a, b;
+    int a = 0, b;
+    string timenome;
     //PARTIDAS PADRAO
     partida jogo1;
     partida jogo2;
@@ -20,6 +21,7 @@ int main(){
     time flo("Floresta");
     time lag("Lagarto");
     time toc("Tocantinopolis");
+    time usuario[10];
     //ATRIBUINDO TIMES AS PARTIDAS
     jogo1.setTimecasa(afo);
     jogo1.setTimevisitante(flo);
@@ -31,41 +33,78 @@ int main(){
     x = getch(); == PEGAR UM CARACTERE
     cout << "Operacao terminada";
     */
-   system("clear||cls");
    MENU:
+   system("clear||cls");
    cout << "BEM VINDO AO BOMBA PATCH EDICAO C++ :)" << endl;
    cout << "=======================================" << endl;
    cout << "             MENU PRINCIPAL           " << endl;
-   cout << "Digite 0 para parar o programa" << endl;
    cout << "Digite 1 para ver os times atuais" << endl;
    cout << "Digite 2 para criar um time" << endl;
    cout << "Digite 3 para criar uma partida" << endl;
    cout << "Digite 4 para ver os jogadores de um time" << endl;
+   cout << "Digite 5 para criar ou editar jogadores" << endl;
 
-   
+   cout << "Digite 0 para parar o programa" << endl;
 
     x = getch();
 
    if(x == '0'){
     goto FIM;
-   }
-
+   }else if(x == '1'){
+    goto TIMENOME;
+   }else if(x == '2'){
+    goto TIMECRIAR;
+   }/*else if(x == '3'){
+    goto PARTIDACRIAR;
+   }else if(x == '4'){
+    goto JOGADORES;
+   }*/
+   x = 0;
+   TIMENOME:
    if(x == '1'){
     system("clear||cls");
 
-    cout <<"--- " << afo.getNome() << endl << "--- " << flo.getNome() << endl << "--- " << lag.getNome() << endl << "--- " << toc.getNome() << endl;
+    cout << "--- " << afo.getNome() << endl << "--- " << flo.getNome() << endl << "--- " << lag.getNome() << endl << "--- " << toc.getNome() << endl;
+    for(int i = 0;i<a;i++){
+        cout << "--- " << usuario[i].getNome() << endl;
+    }
     cout << endl << "Digite 1 para voltar ao menu" << endl;
     cout << "Digite 2 para ver os jogadores de um time" << endl;
-    y = getch();
-    if(y == '1'){
+    x = getch();
+    if(x == '1'){
         system("clear||cls");
         goto MENU;
-    }else if(y == '2'){
-
-    }
+    }/*else if(x == '2'){
+        goto JOGADORES;
+    }*/
    }
-    
-    
+
+    x = 0;
+    TIMECRIAR:
+    if(x == '2'){
+
+        cout << "Digite o nome do seu time (ou digite 1 para voltar ao menu): " << endl;
+        cin >> timenome;
+
+        if(a<10){
+
+            if(timenome == "1"){
+
+                goto MENU;
+
+            }else{
+
+                usuario[a].setNome(timenome);
+                a++;
+                cout << timenome << " criado!";
+            }
+        }else{
+            cout << "Voce atingiu o limite de times!!" << endl;
+
+        }
+        _sleep(1000);
+        goto MENU;
+    }
     
     
     
