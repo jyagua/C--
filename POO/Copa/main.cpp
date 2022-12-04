@@ -6,12 +6,21 @@
 #include "partidas.h"
 using namespace std;
 
+int escolha(string nome, time tal){
+    if(tal.getNome() == nome){
+        return 1;
+    }else{
+        return 0;
+    }
+
+}
+
 
 int main(){
     cout << "main" << endl;
 
-    char x, y;
-    int a = 0, b;
+    char x;
+    int a = 0, b, y;
     string timenome;
     //PARTIDAS PADRAO
     partida jogo1;
@@ -26,13 +35,8 @@ int main(){
     jogo1.setTimecasa(afo);
     jogo1.setTimevisitante(flo);
 
-    //jogo1.getPlacar(); == PLACAR DA PARTIDA
-    //jogo1.addGolcasa(); == COLOCAR UM GOL PRO TIME DE CASA
-    /*
-    cout << "Teste: aperte F" << endl;  
-    x = getch(); == PEGAR UM CARACTERE
-    cout << "Operacao terminada";
-    */
+    
+
    MENU:
    system("clear||cls");
    cout << "BEM VINDO AO BOMBA PATCH C++ EDITION :)" << endl;
@@ -121,9 +125,67 @@ int main(){
     x = 0;
     VERJOGADORES:
     if(x == '2' || x == '4'){
-        cout << endl;
-        afo.printTime();
+        system("clear||cls");
+        cout << "Escolha o time que voce quer ver: " << endl;
+        cin >> timenome;
+        if(timenome == "Floresta"){
+            flo.printTime();
+            y=1;
+        }else if(timenome == "Afogados"){
+            afo.printTime();
+            y=1;
+        }else if(timenome == "Tocantinopolis"){
+            toc.printTime();
+            y=1;
+        }else if(timenome == "Lagarto"){
+            lag.printTime();
+            y=1;
+        }else{
+            for(int i=0;i<a;i++){
+                y = escolha(timenome, usuario[i]);
+                if(y == 1){
+                    usuario[i].printTime();
+                    break;
+                }
+            }
+        }
+        if(y==1){
+            cout << "Aperte 1 para voltar ao menu" << endl;
+            x = getch();
+            if(x == '1'){
+                goto MENU;
+            }
+        }else{
+            cout << "Nome errado!" << endl;
+            goto VERJOGADORES;
+        }
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /*
     x = 0;
@@ -132,7 +194,6 @@ int main(){
 
     }
     */
-
 
     /*teste.timeCasa.atacantes[0].setNome("JoaoFoda");
 
@@ -146,6 +207,14 @@ int main(){
     cout << teste->atacantes[0].getNome() << " ";
 
     cout << teste->getNome() << endl;*/
+
+    //jogo1.getPlacar(); == PLACAR DA PARTIDA
+    //jogo1.addGolcasa(); == COLOCAR UM GOL PRO TIME DE CASA
+    /*
+    cout << "Teste: aperte F" << endl;  
+    x = getch(); == PEGAR UM CARACTERE
+    cout << "Operacao terminada";
+    */
 
     FIM:
     if(x == '0'){
