@@ -126,39 +126,43 @@ int main(){
     VERJOGADORES:
     if(x == '2' || x == '4'){
         system("clear||cls");
-        cout << "Escolha o time que voce quer ver: " << endl;
+        cout << "Escolha o time que voce quer ver ou digite 1 para voltar ao menu: " << endl;
         cin >> timenome;
-        if(timenome == "Floresta"){
-            flo.printTime();
-            y=1;
-        }else if(timenome == "Afogados"){
-            afo.printTime();
-            y=1;
-        }else if(timenome == "Tocantinopolis"){
-            toc.printTime();
-            y=1;
-        }else if(timenome == "Lagarto"){
-            lag.printTime();
-            y=1;
+        if(timenome == "1"){
+            goto MENU;
         }else{
-            for(int i=0;i<a;i++){
-                y = escolha(timenome, usuario[i]);
-                if(y == 1){
-                    usuario[i].printTime();
-                    break;
+            if(timenome == "Floresta"){
+                flo.printTime();
+                y=1;
+            }else if(timenome == "Afogados"){
+                afo.printTime();
+                y=1;
+            }else if(timenome == "Tocantinopolis"){
+                toc.printTime();
+                y=1;
+            }else if(timenome == "Lagarto"){
+                lag.printTime();
+                y=1;
+            }else{
+                for(int i=0;i<a;i++){
+                    y = escolha(timenome, usuario[i]);
+                    if(y == 1){
+                        usuario[i].printTime();
+                        break;
+                    }
                 }
             }
-        }
-        if(y==1){
-            cout << "Aperte 1 para voltar ao menu" << endl;
-            x = getch();
-            if(x == '1'){
-                goto MENU;
+            if(y==1){
+                cout << "Aperte 1 para voltar ao menu" << endl;
+                x = getch();
+                if(x == '1'){
+                    goto MENU;
+                }
+            }else{
+                cout << "Nome errado!" << endl;
+                _sleep(1000.0);
+                goto VERJOGADORES;
             }
-        }else{
-            cout << "Nome errado!" << endl;
-            _sleep(1000.0);
-            goto VERJOGADORES;
         }
 
     }
