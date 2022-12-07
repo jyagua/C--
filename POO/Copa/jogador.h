@@ -51,7 +51,7 @@ class jogador{
     friend class jogadorAtaque;
 };
 
-class jogadorGoleiro:virtual public jogador{
+class jogadorGoleiro:public jogador{
 
     private:
     int Reflexos;
@@ -95,7 +95,7 @@ class jogadorGoleiro:virtual public jogador{
     }
 };
 
-class jogadorDefesa:virtual public jogador{
+class jogadorDefesa:public jogador{
     private:
     int Cobertura;
     int Desarme;
@@ -139,7 +139,7 @@ class jogadorDefesa:virtual public jogador{
 
 };
 
-class jogadorAtaque:virtual public jogador{
+class jogadorAtaque:public jogador{
     private:
     int Velocidade;
     int Tecnica;

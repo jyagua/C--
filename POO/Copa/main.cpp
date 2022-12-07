@@ -2,7 +2,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
-#include <conio.h>
+/*#include <conio.h>*/
 #include "partidas.h"
 using namespace std;
 
@@ -50,7 +50,8 @@ int main(){
 
    cout << "Digite 0 para parar o programa" << endl;
 
-    x = getch();
+    /*x = getch();*/
+    cin >> x;
 
    if(x == '0'){
     goto FIM;
@@ -79,7 +80,10 @@ int main(){
     }
     cout << endl << "Digite 1 para voltar ao menu" << endl;
     cout << "Digite 2 para ver os jogadores de um time" << endl;
-    x = getch();
+
+    /*x = getch();*/
+    cin >> x;
+
     if(x == '1'){
         system("clear||cls");
         goto MENU;
@@ -111,7 +115,7 @@ int main(){
             cout << "Voce atingiu o limite de times!!" << endl;
 
         }
-        _sleep(1000.0);
+        /*_sleep(1000.0);*/
         goto MENU;
     }
     
@@ -154,13 +158,16 @@ int main(){
             }
             if(y==1){
                 cout << "Aperte 1 para voltar ao menu" << endl;
-                x = getch();
+
+                /*x = getch();*/
+                cin >> x;
+
                 if(x == '1'){
                     goto MENU;
                 }
             }else{
                 cout << "Nome errado!" << endl;
-                _sleep(1000.0);
+                /*_sleep(1000.0);*/
                 goto VERJOGADORES;
             }
         }

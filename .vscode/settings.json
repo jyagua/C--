@@ -3,7 +3,8 @@
         "iostream": "cpp",
         "string": "cpp",
         "sstream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "ostream": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled",
     "C_Cpp.codeAnalysis.clangTidy.checks.disabled": [
