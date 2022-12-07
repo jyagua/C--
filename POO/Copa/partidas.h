@@ -2,7 +2,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
-#include "time.h"
+#include "equipe.h"
 using namespace std;
 
 class partida{
@@ -10,10 +10,11 @@ class partida{
     string data;
     int placarCasa;
     int placarVisitante;
-    time timeCasa;
-    time timeVisitante;
+    
 
     public:
+    equipe equipeCasa;
+    equipe equipeVisitante;
 
 
     partida(){
@@ -30,8 +31,8 @@ class partida{
 
     partida(string d, string c, string v){
         data = d;
-        timeCasa.setNome(c);
-        timeVisitante.setNome(v);
+        equipeCasa.setNome(c);
+        equipeVisitante.setNome(v);
 
         placarCasa = 0;
         placarVisitante = 0;
@@ -67,19 +68,19 @@ class partida{
         }
 
     void getPlacar(){
-        cout << timeCasa.getNome() << ": "<< getPlacarCasa() << " / " << timeVisitante.getNome() << ": "<< getPlacarVisitante() << endl;
+        cout << equipeCasa.getNome() << ": "<< getPlacarCasa() << " / " << equipeVisitante.getNome() << ": "<< getPlacarVisitante() << endl;
     }
 
 
-    void setTimecasa(time a){
-        timeCasa = a;
+    void setequipecasa(equipe a){
+        equipeCasa = a;
     }
 
-    void setTimevisitante(time b){
-        timeVisitante = b;
+    void setequipevisitante(equipe b){
+        equipeVisitante = b;
     }
     void printPartida(){
-        cout << "Time de Casa: " << timeCasa.getNome() << endl << "Time Visitante: " << timeVisitante.getNome() << endl;
+        cout << "equipe de Casa: " << equipeCasa.getNome() << endl << "equipe Visitante: " << equipeVisitante.getNome() << endl;
         getPlacar();
     }
 

@@ -6,7 +6,7 @@
 #include "partidas.h"
 using namespace std;
 
-int escolha(string nome, time tal){
+int escolha(string nome, equipe tal){
     if(tal.getNome() == nome){
         return 1;
     }else{
@@ -21,19 +21,19 @@ int main(){
 
     char x;
     int a = 0, b, y;
-    string timenome;
+    string equipenome;
     //PARTIDAS PADRAO
     partida jogo1;
     partida jogo2;
-    //TIMES PADRAO
-    time afo("Afogados");
-    time flo("Floresta");
-    time lag("Lagarto");
-    time toc("Tocantinopolis");
-    time usuario[10];
-    //ATRIBUINDO TIMES AS PARTIDAS
-    jogo1.setTimecasa(afo);
-    jogo1.setTimevisitante(flo);
+    //equipeS PADRAO
+    equipe afo("Afogados");
+    equipe flo("Floresta");
+    equipe lag("Lagarto");
+    equipe toc("Tocantinopolis");
+    equipe usuario[10];
+    //ATRIBUINDO equipeS AS PARTIDAS
+    jogo1.setequipecasa(afo);
+    jogo1.setequipevisitante(flo);
 
     
 
@@ -42,10 +42,10 @@ int main(){
    cout << "BEM VINDO AO BOMBA PATCH C++ EDITION :)" << endl;
    cout << "=======================================" << endl;
    cout << "             MENU PRINCIPAL           " << endl;
-   cout << "Digite 1 para ver os times atuais" << endl;
-   cout << "Digite 2 para criar um time" << endl;
+   cout << "Digite 1 para ver os equipes atuais" << endl;
+   cout << "Digite 2 para criar um equipe" << endl;
    cout << "Digite 3 para criar uma partida" << endl;
-   cout << "Digite 4 para ver os jogadores de um time" << endl;
+   cout << "Digite 4 para ver os jogadores de um equipe" << endl;
    cout << "Digite 5 para criar ou editar jogadores" << endl;
 
    cout << "Digite 0 para parar o programa" << endl;
@@ -56,9 +56,9 @@ int main(){
    if(x == '0'){
     goto FIM;
    }else if(x == '1'){
-    goto TIMENOME;
+    goto equipeNOME;
    }else if(x == '2'){
-    goto TIMECRIAR;
+    goto equipeCRIAR;
    }/*else if(x == '3'){
     goto PARTIDACRIAR;
    }
@@ -70,7 +70,7 @@ int main(){
    */
 
    x = 0;
-   TIMENOME:
+   equipeNOME:
    if(x == '1'){
     system("clear||cls");
 
@@ -79,7 +79,7 @@ int main(){
         cout << "--- " << usuario[i].getNome() << endl;
     }
     cout << endl << "Digite 1 para voltar ao menu" << endl;
-    cout << "Digite 2 para ver os jogadores de um time" << endl;
+    cout << "Digite 2 para ver os jogadores de um equipe" << endl;
 
     /*x = getch();*/
     cin >> x;
@@ -93,26 +93,26 @@ int main(){
    }
 
     x = 0;
-    TIMECRIAR:
+    equipeCRIAR:
     if(x == '2'){
         cout << endl;
-        cout << "Digite o nome do seu time ou digite 1 para voltar ao menu : " << endl;
-        cin >> timenome;
+        cout << "Digite o nome do seu equipe ou digite 1 para voltar ao menu : " << endl;
+        cin >> equipenome;
 
         if(a<10){
 
-            if(timenome == "1"){
+            if(equipenome == "1"){
 
                 goto MENU;
 
             }else{
 
-                usuario[a].setNome(timenome);
+                usuario[a].setNome(equipenome);
                 a++;
-                cout << timenome << " criado!";
+                cout << equipenome << " criado!";
             }
         }else{
-            cout << "Voce atingiu o limite de times!!" << endl;
+            cout << "Voce atingiu o limite de equipes!!" << endl;
 
         }
         /*_sleep(1000.0);*/
@@ -130,28 +130,28 @@ int main(){
     VERJOGADORES:
     if(x == '2' || x == '4'){
         system("clear||cls");
-        cout << "Escolha o time que voce quer ver ou digite 1 para voltar ao menu: " << endl;
-        cin >> timenome;
-        if(timenome == "1"){
+        cout << "Escolha o equipe que voce quer ver ou digite 1 para voltar ao menu: " << endl;
+        cin >> equipenome;
+        if(equipenome == "1"){
             goto MENU;
         }else{
-            if(timenome == "Floresta"){
-                flo.printTime();
+            if(equipenome == "Floresta"){
+                flo.printequipe();
                 y=1;
-            }else if(timenome == "Afogados"){
-                afo.printTime();
+            }else if(equipenome == "Afogados"){
+                afo.printequipe();
                 y=1;
-            }else if(timenome == "Tocantinopolis"){
-                toc.printTime();
+            }else if(equipenome == "Tocantinopolis"){
+                toc.printequipe();
                 y=1;
-            }else if(timenome == "Lagarto"){
-                lag.printTime();
+            }else if(equipenome == "Lagarto"){
+                lag.printequipe();
                 y=1;
             }else{
                 for(int i=0;i<a;i++){
-                    y = escolha(timenome, usuario[i]);
+                    y = escolha(equipenome, usuario[i]);
                     if(y == 1){
-                        usuario[i].printTime();
+                        usuario[i].printequipe();
                         break;
                     }
                 }
@@ -207,12 +207,12 @@ int main(){
     }
     */
 
-    /*teste.timeCasa.atacantes[0].setNome("JoaoFoda");
+    /*teste.equipeCasa.atacantes[0].setNome("JoaoFoda");
 
-    cout << teste.timeCasa.getNome() << endl << teste.timeCasa.atacantes->getNome() << endl;
+    cout << teste.equipeCasa.getNome() << endl << teste.equipeCasa.atacantes->getNome() << endl;
     teste.getPlacar();
 
-    /*time *teste = new time;
+    /*equipe *teste = new equipe;
 
     teste->atacantes[0].setNome("JoaoFoda");
 
@@ -221,7 +221,7 @@ int main(){
     cout << teste->getNome() << endl;*/
 
     //jogo1.getPlacar(); == PLACAR DA PARTIDA
-    //jogo1.addGolcasa(); == COLOCAR UM GOL PRO TIME DE CASA
+    //jogo1.addGolcasa(); == COLOCAR UM GOL PRO equipe DE CASA
     /*
     cout << "Teste: aperte F" << endl;  
     x = getch(); == PEGAR UM CARACTERE
