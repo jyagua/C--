@@ -116,14 +116,15 @@ int main(){
 
    MENU:
    system("clear||cls");
+   //TEMOS QUE MUDAR O MENU COMPLETAMENTE
    cout << "   BEM VINDO AO BOMBA PATCH C++ EDITION :)   " << endl;
    cout << "=============================================" << endl;
    cout << "|              MENU PRINCIPAL               |" << endl;
-   cout << "|    Digite 1 para ver os equipes atuais    |" << endl;
-   cout << "|       Digite 2 para criar um equipe       |" << endl;
-   cout << "|      Digite 3 para criar uma partida      |" << endl;
-   cout << "|Digite 4 para ver os jogadores de um equipe|" << endl;
-   cout << "|  Digite 5 para criar ou editar jogadores  |" << endl;
+   cout << "|    Digite 1 para ver o menu de partidas   |" << endl;
+   cout << "|    Digite 2 para ver o menu de equipes    |" << endl;
+   cout << "|    Digite 3 para ver o menu de jogadores  |" << endl;
+   cout << "|      Digite 4 para iniciar uma partida    |" << endl;
+   cout << "|   Digite 5 para criar ou editar jogadores |" << endl;
    cout << "=============================================" << endl;
 
    cout << "Digite 0 para parar o programa" << endl;
