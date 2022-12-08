@@ -76,12 +76,16 @@ int main(){
     //     A == AUXILIO DE CRIACAO DE EQUIPES   B == AUXILIO DE CRIACAO DE PARTIDAS
     int a = 0, b = 0, c = 0, c2;
     //  AUXILIOS DE JOGADORES
-    int g, d, at;
+    int g=0, d=0, at=0, total;
     //  AUXILIOS NO MENU
     int p, e, j;
 
     int y;
+
+    int player;
+    float h;
     string equipenome;
+    string jogadornome;
     //PARTIDAS PADRAO
     partida jogo1;
     partida jogos[10];
@@ -339,13 +343,11 @@ int main(){
                     }
                 }
                 if(y==1){
-                    cout << "Aperte 1 para voltar ao menu de times" << endl;
+                    cout << "Insira qualquer caractere para voltar ao menu de times" << endl;
 
-                    cin >> x;
+                    cin >> trow;
 
-                    if(x == '1'){
-                        goto MENUEQUIPES;
-                    }
+                    goto MENUEQUIPES;
                 }else{
                     cout << "Nome errado!" << endl;
                     goto MENUEQUIPES;
@@ -398,16 +400,192 @@ int main(){
 
         system("clear||cls");
 
-        cout << "        BEM VINDO AO MENU DE JOGADORES        " << endl;
-        cout << "==============================================" << endl;
-        cout << "Digite 1 para ver todos os times              " << endl;
-        cout << "Digite 2 para ver um time e seus jogadores    " << endl;
-        cout << "Digite 3 para criar um time                   " << endl;
-        cout << "Digite 4 para voltar ao menu principal        " << endl;
+        cout << "        BEM VINDO AO MENU DE JOGADORES            " << endl;
+        cout << "==================================================" << endl;
+        cout << "Digite 1 para criar um jogador                    " << endl;
+        cout << "Digite 2 para ver os jogadores criados            " << endl;
+        cout << "Digite 3 para colocar um jogador criado em um time" << endl;
+        cout << "Digite 4 para voltar ao menu principal            " << endl;
 
         cin >> e;
 
+        if(e == 1){
+            cout << endl << "Diga o primeiro nome do jogador: " << endl;
+            cin >> jogadornome;
+            cout << "Digite 1 para criar um goleiro;" << endl;
+            cout << "Digite 2 para criar um fixo ou pivo(defensor);" << endl;
+            cout << "Digite 3 para criar um ala esquerda ou ala direita(atacante);" << endl;
 
+            cin >> total;
+
+            if(total == 1){
+
+
+                if(g<5){
+                    gol[g].setNome(jogadornome);
+                    cout << "Digite a camisa do jogador: " << endl;
+                    cin >> player;
+                    gol[g].setCamisa(player);
+                    cout << "Digite a habilidade do jogador: " << endl;
+                    cin >> player;
+                    gol[g].setHabilidade(player);
+                    cout << "Digite a altura do jogador(com . ao inves de ,): " << endl;
+                    cin >> h;
+                    gol[g].setAltura(h);
+                    g++;
+                }else{
+                    cout << "Limite atingido! Insira qualquer caractere para voltar ao menu de jogadores:" << endl;
+                    cin >> trow;
+                    
+                }
+                goto MENUJOGADORES;
+
+            }else if(total == 2){
+
+
+                if(d<5){
+                    zag[d].setNome(jogadornome);
+                    cout << "Digite a camisa do jogador: " << endl;
+                    cin >> player;
+                    zag[d].setCamisa(player);
+                    cout << "Digite a habilidade do jogador: " << endl;
+                    cin >> player;
+                    zag[d].setHabilidade(player);
+                    d++;
+                }else{
+                    cout << "Limite atingido! Insira qualquer caractere para voltar ao menu de jogadores:" << endl;
+                    cin >> trow;
+                    
+                }
+                goto MENUJOGADORES;
+
+            }if(total == 3){
+
+
+                if(at<5){
+                    ata[at].setNome(jogadornome);
+                    cout << "Digite a camisa do jogador: " << endl;
+                    cin >> player;
+                    ata[at].setCamisa(player);
+                    cout << "Digite a habilidade do jogador: " << endl;
+                    cin >> player;
+                    ata[at].setHabilidade(player);
+                    at++;
+                }else{
+                    cout << "Limite atingido! Insira qualquer caractere para voltar ao menu de jogadores:" << endl;
+                    cin >> trow;
+                    
+                }
+                goto MENUJOGADORES;
+
+            }
+
+
+        }else if(e == 2){
+            for(int i = 0; i<g;i++){
+                if(gol[i].getNome() != "Cassio"){
+                    cout << "Goleiro " << gol[i].getNome() << endl;
+                    cout << "Camisa " << gol[i].getCamisa() << endl << "==============";
+                }
+            }
+            for(int i = 0; i<d;i++){
+                if(gol[i].getNome() != "Super 11"){
+                    cout << "Defensor " << zag[i].getNome() << endl;
+                    cout << "Camisa " << zag[i].getCamisa() << endl << "==============";
+                }
+            }
+            for(int i = 0; i<at;i++){
+                if(gol[i].getNome() != "Tsubasa"){
+                    cout << "Atacante " << ata[i].getNome() << endl;
+                    cout << "Camisa " << ata[i].getCamisa() << endl << "==============";
+                }
+            }
+            cout << "Insira qualquer caractere para voltar ao menu de jogadores: " << endl;
+            cin >> trow;
+            goto MENUJOGADORES;
+            
+
+
+        }else if(e == 3){
+            cout << "Digite o nome do jogador que voce vai contratar: " << endl;
+            cin >> jogadornome;
+            for(int i = 0; i<g;i++){
+                if(gol[i].getNome() == jogadornome){
+                    cout << "Digite o nome do time que voce vai colocar o jogador: " << endl;
+                    cin >> equipenome;
+                    if(equipenome == "Floresta"){
+                        flo.setGoleiro(gol[i]);
+                    }else if(equipenome == "Afogados"){
+                        afo.setGoleiro(gol[i]);
+                    }else if(equipenome == "Tocantinopolis"){
+                        toc.setGoleiro(gol[i]);
+                    }else if(equipenome == "Lagarto"){
+                        lag.setGoleiro(gol[i]);
+                    }else{
+                        for(int i=0;i<a;i++){
+                            int in = escolha(equipenome, usuario[i]);
+                            if(in == 1){
+                                usuario[i].setGoleiro(gol[i]);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            for(int i = 0; i<d;i++){
+                if(zag[i].getNome() == jogadornome){
+                    cout << "Digite o nome do time que voce vai colocar o jogador: " << endl;
+                    cin >> equipenome;
+                    if(equipenome == "Floresta"){
+                        flo.setFixo(zag[i]);
+                    }else if(equipenome == "Afogados"){
+                        afo.setFixo(zag[i]);
+                    }else if(equipenome == "Tocantinopolis"){
+                        toc.setFixo(zag[i]);
+                    }else if(equipenome == "Lagarto"){
+                        lag.setFixo(zag[i]);
+                    }else{
+                        for(int i=0;i<a;i++){
+                            int in = escolha(equipenome, usuario[i]);
+                            if(in == 1){
+                                usuario[i].setFixo(zag[i]);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            for(int i = 0; i<at;i++){
+                if(ata[i].getNome() == jogadornome){
+                    cout << "Digite o nome do time que voce vai colocar o jogador: " << endl;
+                    cin >> equipenome;
+                    if(equipenome == "Floresta"){
+                        flo.setDireita(ata[i]);
+                    }else if(equipenome == "Afogados"){
+                        afo.setDireita(ata[i]);
+                    }else if(equipenome == "Tocantinopolis"){
+                        toc.setDireita(ata[i]);
+                    }else if(equipenome == "Lagarto"){
+                        lag.setDireita(ata[i]);
+                    }else{
+                        for(int i=0;i<a;i++){
+                            int in = escolha(equipenome, usuario[i]);
+                            if(in == 1){
+                                usuario[i].setDireita(ata[i]);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            cout << "A contratacao deu certo! Insira qualquer caractere para voltar ao menu de jogadores: " << endl;
+            cin >> trow;
+            goto MENUJOGADORES;
+            
+        }else if(e == 4){
+            e = 0;
+            goto MENU;
+        }
 
 
 
