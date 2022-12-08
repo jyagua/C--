@@ -2,6 +2,8 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 /*#include <conio.h>*/
 #include "partidas.h"
 using namespace std;
@@ -15,9 +17,32 @@ int escolha(string nome, equipe tal){
 
 }
 
+int rand(int x){
+    srand(time(0));
+    x = rand()%11+1;
+    return x;
+}
+
+int radom(int x){
+    srand(x);
+    x = rand()%11+1;
+    return x;
+}
+
+/*float randh(){
+    float x, z;
+    srand(time(0));
+    x = rand()%2+1;
+    z = rand()%8+5;
+    z = z/10;
+    x+=z;
+
+    return x;
+}*/
+
 
 int main(){
-    cout << "main" << endl;
+    
 
     char x;
     int a = 0, b, y;
@@ -31,22 +56,32 @@ int main(){
     equipe lag("Lagarto");
     equipe toc("Tocantinopolis");
     equipe usuario[10];
+    //JOGADORES PADRAO
+    jogadorGoleiro gol[5];
+    jogadorDefesa zag[5];
+    jogadorAtaque ata[5];
     //ATRIBUINDO equipeS AS PARTIDAS
     jogo1.setequipecasa(afo);
     jogo1.setequipevisitante(flo);
 
-    
+    afo.habilidades(1.80, radom(rand(1)+1), radom(rand(1)+26), radom(rand(1)+75), radom(rand(1)+45), radom(rand(1)+59), radom(rand(1)+96), radom(rand(1)+728), radom(rand(1)+997), radom(rand(1)+9), radom(rand(1)+10), radom(rand(1)+11));
+    flo.habilidades(1.83, radom(rand(1)+175), radom(rand(1)+2156), radom(rand(1)+755), radom(rand(1)+5), radom(rand(1)+593), radom(rand(1)+9657), radom(rand(1)+2), radom(rand(1)+83), radom(rand(1)+79), radom(rand(1)+102), radom(rand(1)+141));
+    lag.habilidades(1.76, radom(rand(1)+657), radom(rand(1)+375), radom(rand(1)+786), radom(rand(1)+5687), radom(rand(1)+53), radom(rand(1)+486), radom(rand(1)+286), radom(rand(1)+19), radom(rand(1)+45), radom(rand(1)+65), radom(rand(1)+78));
+    toc.habilidades(1.92, radom(rand(1)+472), radom(rand(1)+420), radom(rand(1)+69), radom(rand(1)+335), radom(rand(1)+468), radom(rand(1)+164), radom(rand(1)+987), radom(rand(1)+231), radom(rand(1)+34), radom(rand(1)+378), radom(rand(1)+433));
+
+    cout << "main" << endl;
 
    MENU:
    system("clear||cls");
-   cout << "BEM VINDO AO BOMBA PATCH C++ EDITION :)" << endl;
-   cout << "=======================================" << endl;
-   cout << "             MENU PRINCIPAL           " << endl;
-   cout << "Digite 1 para ver os equipes atuais" << endl;
-   cout << "Digite 2 para criar um equipe" << endl;
-   cout << "Digite 3 para criar uma partida" << endl;
-   cout << "Digite 4 para ver os jogadores de um equipe" << endl;
-   cout << "Digite 5 para criar ou editar jogadores" << endl;
+   cout << "   BEM VINDO AO BOMBA PATCH C++ EDITION :)   " << endl;
+   cout << "=============================================" << endl;
+   cout << "|              MENU PRINCIPAL               |" << endl;
+   cout << "|    Digite 1 para ver os equipes atuais    |" << endl;
+   cout << "|       Digite 2 para criar um equipe       |" << endl;
+   cout << "|      Digite 3 para criar uma partida      |" << endl;
+   cout << "|Digite 4 para ver os jogadores de um equipe|" << endl;
+   cout << "|  Digite 5 para criar ou editar jogadores  |" << endl;
+   cout << "=============================================" << endl;
 
    cout << "Digite 0 para parar o programa" << endl;
 
