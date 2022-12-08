@@ -91,7 +91,7 @@ int main(){
     //ATRIBUINDO equipeS AS PARTIDAS
     jogo1.setequipecasa(afo);
     jogo1.setequipevisitante(flo);
-
+    //SETANDO OS NOMES
 {
     afo.setNomes(batizo(1), batizo(2), batizo(3), batizo(4), batizo(5));
     flo.setNomes(batizo(12), batizo(23), batizo(34), batizo(45), batizo(56));
@@ -101,7 +101,7 @@ int main(){
         usuario[i].setNomes(batizo(2+i), batizo(2*i), batizo(3+i), batizo(4*2*i), batizo(5+i*3));
     }
 }
-
+    //SETANDO HABILIDADES E ETC
 {
     afo.habilidades(1.80, radom(rand(1)+1), radom(rand(1)+26), radom(rand(1)+75), radom(rand(1)), radom(rand(1)+59), radom(rand(1)+96), radom(rand(1)+728), radom(rand(1)+997), radom(rand(1)+9), radom(rand(1)+10), radom(rand(1)+11));
     flo.habilidades(1.83, radom(rand(1)+175), radom(rand(1)+2156), radom(rand(1)+755), radom(rand(1)+865), radom(rand(1)+593), radom(rand(1)+9657), radom(rand(1)+2), radom(rand(1)+83), radom(rand(1)+79), radom(rand(1)+102), radom(rand(1)+141));
@@ -124,7 +124,6 @@ int main(){
    cout << "|   Digite 2 para ver o menu de equipes     |" << endl;
    cout << "|   Digite 3 para ver o menu de jogadores   |" << endl;
    cout << "|   Digite 4 para iniciar uma partida       |" << endl;
-   cout << "|   Digite 5 para criar ou editar jogadores |" << endl;
    cout << "=============================================" << endl;
 
    cout << "Digite 0 para parar o programa" << endl;
@@ -135,19 +134,98 @@ int main(){
    if(x == '0'){
     goto FIM;
    }else if(x == '1'){
-    goto equipeNOME;
+    goto MENUPARTIDAS;
    }else if(x == '2'){
-    goto equipeCRIAR;
-   }/*else if(x == '3'){
-    goto PARTIDACRIAR;
+    goto MENUEQUIPES;
+   }else if(x == '3'){
+    goto MENUJOGADORES;
+   }else if(x == '4'){
+    goto INICIARPARTIDA;
    }
-   */else if(x == '4'){
-    goto VERJOGADORES;
-   }/*else if(x == '5'){
-    goto CRIARJOGADOR;
-   }
-   */
+    x=0;
+    MENUPARTIDAS:
+    if(x == '1'){
+        system("clear||cls");
 
+        cout << "     BEM VINDO AO MENU DE PARTIDAS        " << endl;
+        cout << "==========================================" << endl;
+        cout << "Digite 1 para ver as datas das partidas   " << endl;
+        cout << "Digite 2 para ver o resultado das partidas" << endl;
+        cout << "Digite 3 para criar uma partida           " << endl;
+
+
+
+
+
+
+
+
+    }
+
+
+
+    x=0;
+    MENUEQUIPES:
+    if(x == '2'){
+
+
+
+
+
+
+
+
+    }
+
+
+
+    x=0;
+    MENUJOGADORES:
+    if(x == '3'){
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+    x=0;
+    INICIARPARTIDA:
+    if(x == '4'){
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
    x = 0;
    equipeNOME:
    if(x == '1'){
@@ -160,7 +238,6 @@ int main(){
     cout << endl << "Digite 1 para voltar ao menu" << endl;
     cout << "Digite 2 para ver os jogadores de um equipe" << endl;
 
-    /*x = getch();*/
     cin >> x;
 
     if(x == '1'){
@@ -194,17 +271,9 @@ int main(){
             cout << "Voce atingiu o limite de equipes!!" << endl;
 
         }
-        /*_sleep(1000.0);*/
         goto MENU;
     }
     
-    /*
-    x = 0;
-    PARTIDACRIAR:
-    if(x == '3'){
-
-    }
-    */
     x = 0;
     VERJOGADORES:
     if(x == '2' || x == '4'){
@@ -238,7 +307,6 @@ int main(){
             if(y==1){
                 cout << "Aperte 1 para voltar ao menu" << endl;
 
-                /*x = getch();*/
                 cin >> x;
 
                 if(x == '1'){
@@ -246,37 +314,12 @@ int main(){
                 }
             }else{
                 cout << "Nome errado!" << endl;
-                /*_sleep(1000.0);*/
                 goto VERJOGADORES;
             }
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    */
 
     /*
     x = 0;
