@@ -74,7 +74,7 @@ int main(){
 
     char x, trow;
     //     A == AUXILIO DE CRIACAO DE EQUIPES   B == AUXILIO DE CRIACAO DE PARTIDAS
-    int a = 0, b = 0, c = 0;
+    int a = 0, b = 0, c = 0, c2;
     //  AUXILIOS DE JOGADORES
     int g, d, at;
     //  AUXILIOS NO MENU
@@ -242,9 +242,32 @@ int main(){
 
 
         }else if(p == 3){
+            cout << "Digite o dia da partida que voce procura" << endl;
+                cin >> c;
+
+
+                cout << "Digite o mes da partida que voce procura" << endl;
+                cin >> c2;
+
+                for(int i = 0;i<10;i++){
+                    if ((c == jogos[i].getDia())&&(c2 == jogos[i].getMes())){
+                        cout << endl;
+                        jogos[i].printPartida();
+                    }
+                }
+            cout << "Insira qualquer caractere para voltar ao menu de partidas" << endl;
+            cin >> trow;
+            p = 0;
+            goto MENUPARTIDAS;
+
+
+
+        }else if(p == 4){
+            p = 0;
+            goto MENU;
+
+
             
-
-
         }
 
 
