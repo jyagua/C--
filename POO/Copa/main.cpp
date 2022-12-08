@@ -72,12 +72,17 @@ string batizo(int x){
 int main(){
     
 
-    char x;
-    int a = 0, b, y;
+    char x, trow;
+    //     A == AUXILIO DE CRIACAO DE EQUIPES   B == AUXILIO DE CRIACAO DE PARTIDAS
+    int a = 0, b = 0, c = 0;
+    //  AUXILIOS DE JOGADORES
+    int g, d, at;
+    //  AUXILIOS NO MENU
+    int p, e, j;
     string equipenome;
     //PARTIDAS PADRAO
     partida jogo1;
-    partida jogo2;
+    partida jogos[10];
     //equipeS PADRAO
     equipe afo("Afogados");
     equipe flo("Floresta");
@@ -91,6 +96,9 @@ int main(){
     //ATRIBUINDO equipeS AS PARTIDAS
     jogo1.setequipecasa(afo);
     jogo1.setequipevisitante(flo);
+
+    jogo1.setDia(12);
+    jogo1.setMes(5);
     //SETANDO OS NOMES
 {
     afo.setNomes(batizo(1), batizo(2), batizo(3), batizo(4), batizo(5));
@@ -145,14 +153,99 @@ int main(){
     x=0;
     MENUPARTIDAS:
     if(x == '1'){
+        
         system("clear||cls");
 
         cout << "     BEM VINDO AO MENU DE PARTIDAS        " << endl;
         cout << "==========================================" << endl;
         cout << "Digite 1 para ver as datas das partidas   " << endl;
-        cout << "Digite 2 para ver o resultado das partidas" << endl;
-        cout << "Digite 3 para criar uma partida           " << endl;
+        cout << "Digite 2 para criar uma partida           " << endl;
+        cout << "Digite 3 para procurar partidas em uma data especifica(parte do trabalho)" << endl;
+        cout << "Digite 4 para voltar ao menu principal    " << endl;
 
+        cin >> p;
+
+        if(p == 1){
+            jogo1.printPartida();
+            for(int i=0;i<10;i++){
+                if ((jogos[i].getDia() != 30)&&(jogos[i].getMes() != 2)){
+                    cout << endl;
+                    jogos[i].printPartida();
+                }
+                
+            }
+            cout << "Insira qualquer caractere para voltar ao menu de partidas" << endl;
+            cin >> trow;
+            p = 0;
+            goto MENUPARTIDAS;
+
+
+
+        }else if(p == 2){
+            for(int i=b;i<b+1;i++){
+                cout << "Digite o dia da partida" << endl;
+                cin >> c;
+                jogos[b].setDia(c);
+                cout << "Digite o mes da partida" << endl;
+                cin >> c;
+                jogos[b].setMes(c);
+                cout << "Insira o nome do time de casa" << endl;
+                cin >> equipenome;
+
+                if(equipenome == "Floresta"){
+                    jogos[b].setequipecasa(flo);
+                }else if(equipenome == "Afogados"){
+                    jogos[b].setequipecasa(afo);
+                }else if(equipenome == "Lagarto"){
+                    jogos[b].setequipecasa(lag);
+                }else if(equipenome == "Tocantinopolis"){
+                    jogos[b].setequipecasa(toc);
+                }else{
+                    for(int i=0;i<a;i++){
+                        int y = 0;
+                        y = escolha(equipenome, usuario[i]);
+                        if(y == 1){
+                            jogos[b].setequipecasa(usuario[i]);
+                            break;
+                        }
+                    }
+                }
+
+                cout << "Insira o nome do time visitante" << endl;
+                cin >> equipenome;
+                if(equipenome == "Floresta"){
+                    jogos[b].setequipevisitante(flo);
+                }else if(equipenome == "Afogados"){
+                    jogos[b].setequipevisitante(afo);
+                }else if(equipenome == "Lagarto"){
+                    jogos[b].setequipevisitante(lag);
+                }else if(equipenome == "Tocantinopolis"){
+                    jogos[b].setequipevisitante(toc);
+                }else{
+                    for(int i=0;i<a;i++){
+                        int y = 0;
+                        y = escolha(equipenome, usuario[i]);
+                        if(y == 1){
+                            jogos[b].setequipevisitante(usuario[i]);
+                            break;
+                        }
+                    }
+                }
+
+            }
+            b++;
+            cout << "Insira qualquer caractere para voltar ao menu de partidas" << endl;
+            cin >> trow;
+            p = 0;
+            goto MENUPARTIDAS;
+
+
+
+        }else if(p == 3){
+            
+
+
+        }
 
 
 

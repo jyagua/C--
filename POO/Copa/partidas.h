@@ -7,7 +7,7 @@ using namespace std;
 
 class partida{
     private:
-    string data;
+    int dia, mes;
     int placarCasa;
     int placarVisitante;
     
@@ -18,19 +18,22 @@ class partida{
 
 
     partida(){
-        data = "30/02";
+        dia = 30;
+        mes = 02;
         placarCasa = 0;
         placarVisitante = 0;
     }
 
-    partida(string d){
-        data = d;
+    partida(int d, int m){
+        dia = d;
+        mes = m;
         placarCasa = 0;
         placarVisitante = 0;
     }
 
-    partida(string d, string c, string v){
-        data = d;
+    partida(int d, int m, string c, string v){
+        dia = d;
+        mes = m;
         equipeCasa.setNome(c);
         equipeVisitante.setNome(v);
 
@@ -39,12 +42,20 @@ class partida{
     }
 
 
-    void setData(string data) { 
-        this->data = data; 
+    void setDia(int data) { 
+        this->dia = data; 
         } 
-    string getData() { 
-        return this->data; 
+    int getDia() { 
+        return this->dia; 
         }
+    void setMes(int mes){
+        this->mes = mes;
+    }
+    int getMes(){
+        return this->mes;
+    }
+
+
     void setPlacarCasa(int placarCasa) {
         this->placarCasa = placarCasa;
         } 
@@ -79,7 +90,19 @@ class partida{
     void setequipevisitante(equipe b){
         equipeVisitante = b;
     }
+
+    string getEquipecasa(){
+        return equipeCasa.getNome();
+    }
+
+    string getEquipevisitante(){
+        return equipeVisitante.getNome();
+    }
+
+
+
     void printPartida(){
+        cout << "Jogo na data: " << getDia() << "/" << getMes() << endl;
         cout << "equipe de Casa: " << equipeCasa.getNome() << endl << "equipe Visitante: " << equipeVisitante.getNome() << endl;
         getPlacar();
     }
