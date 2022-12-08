@@ -245,6 +245,8 @@ int main(){
             
 
 
+        }else if(p == 4){
+            goto MENU;
         }
 
 
