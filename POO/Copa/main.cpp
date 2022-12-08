@@ -93,12 +93,12 @@ int main(){
     jogo1.setequipevisitante(flo);
 
 {
-    afo.setnomes(batizo(1), batizo(2), batizo(3), batizo(4), batizo(5));
-    flo.setnomes(batizo(12), batizo(23), batizo(34), batizo(45), batizo(56));
-    lag.setnomes(batizo(123), batizo(234), batizo(345), batizo(456), batizo(567));
-    toc.setnomes(batizo(15), batizo(26), batizo(37), batizo(48), batizo(59));
+    afo.setNomes(batizo(1), batizo(2), batizo(3), batizo(4), batizo(5));
+    flo.setNomes(batizo(12), batizo(23), batizo(34), batizo(45), batizo(56));
+    lag.setNomes(batizo(123), batizo(234), batizo(345), batizo(456), batizo(567));
+    toc.setNomes(batizo(15), batizo(26), batizo(37), batizo(48), batizo(59));
     for(int i=0;i<10;i++){
-        usuario[i].setnomes(batizo(2+i), batizo(2*i), batizo(3+i), batizo(4*2*i), batizo(5+i*3));
+        usuario[i].setNomes(batizo(2+i), batizo(2*i), batizo(3+i), batizo(4*2*i), batizo(5+i*3));
     }
 }
 

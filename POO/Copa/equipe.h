@@ -120,5 +120,13 @@ class equipe{
         atacantes[1].setTecnica(at+3);
     }
 
+    void setNomes(string a, string b, string c, string d, string e){
+        goleiro.setNome(a);
+        defensor[0].setNome(b);
+        defensor[1].setNome(c);
+        atacantes[0].setNome(d);
+        atacantes[1].setNome(e);
+    }
+
 
 };
