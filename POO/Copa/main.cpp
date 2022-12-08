@@ -40,6 +40,34 @@ int radom(int x){
     return x;
 }*/
 
+string batizo(int x){
+    int y;
+    y = radom(rand(1) * x);
+    if(y == 1){
+        return "Manoel";
+    }else if(y == 2){
+        return "Lucas";
+    }else if(y == 3){
+        return "Gabriel";
+    }else if(y == 4){
+        return "Ytalo";
+    }else if(y == 5){
+        return "Thiago";
+    }else if(y == 6){
+        return "Mateus";
+    }else if(y == 7){
+        return "Igor";
+    }else if(y == 8){
+        return "Yudi";
+    }else if(y == 9){
+        return "Lucio";
+    }else if(y == 10){
+        return "Davi";
+    }else if(y == 11){
+        return "Douglas";
+    }
+
+}
 
 int main(){
     
@@ -64,10 +92,25 @@ int main(){
     jogo1.setequipecasa(afo);
     jogo1.setequipevisitante(flo);
 
-    afo.habilidades(1.80, radom(rand(1)+1), radom(rand(1)+26), radom(rand(1)+75), radom(rand(1)+45), radom(rand(1)+59), radom(rand(1)+96), radom(rand(1)+728), radom(rand(1)+997), radom(rand(1)+9), radom(rand(1)+10), radom(rand(1)+11));
-    flo.habilidades(1.83, radom(rand(1)+175), radom(rand(1)+2156), radom(rand(1)+755), radom(rand(1)+5), radom(rand(1)+593), radom(rand(1)+9657), radom(rand(1)+2), radom(rand(1)+83), radom(rand(1)+79), radom(rand(1)+102), radom(rand(1)+141));
+{
+    afo.setnomes(batizo(1), batizo(2), batizo(3), batizo(4), batizo(5));
+    flo.setnomes(batizo(12), batizo(23), batizo(34), batizo(45), batizo(56));
+    lag.setnomes(batizo(123), batizo(234), batizo(345), batizo(456), batizo(567));
+    toc.setnomes(batizo(15), batizo(26), batizo(37), batizo(48), batizo(59));
+    for(int i=0;i<10;i++){
+        usuario[i].setnomes(batizo(2+i), batizo(2*i), batizo(3+i), batizo(4*2*i), batizo(5+i*3));
+    }
+}
+
+{
+    afo.habilidades(1.80, radom(rand(1)+1), radom(rand(1)+26), radom(rand(1)+75), radom(rand(1)), radom(rand(1)+59), radom(rand(1)+96), radom(rand(1)+728), radom(rand(1)+997), radom(rand(1)+9), radom(rand(1)+10), radom(rand(1)+11));
+    flo.habilidades(1.83, radom(rand(1)+175), radom(rand(1)+2156), radom(rand(1)+755), radom(rand(1)+865), radom(rand(1)+593), radom(rand(1)+9657), radom(rand(1)+2), radom(rand(1)+83), radom(rand(1)+79), radom(rand(1)+102), radom(rand(1)+141));
     lag.habilidades(1.76, radom(rand(1)+657), radom(rand(1)+375), radom(rand(1)+786), radom(rand(1)+5687), radom(rand(1)+53), radom(rand(1)+486), radom(rand(1)+286), radom(rand(1)+19), radom(rand(1)+45), radom(rand(1)+65), radom(rand(1)+78));
     toc.habilidades(1.92, radom(rand(1)+472), radom(rand(1)+420), radom(rand(1)+69), radom(rand(1)+335), radom(rand(1)+468), radom(rand(1)+164), radom(rand(1)+987), radom(rand(1)+231), radom(rand(1)+34), radom(rand(1)+378), radom(rand(1)+433));
+    for(int x=0;x<10;x++){
+        usuario[x].habilidades(1.92, radom(rand(1)+x*2), radom(rand(1)+x*3), radom(rand(1)+x*9), radom(rand(1)+x*22), radom(rand(1)+x*12), radom(rand(1)+x*31), radom(rand(1)+x*45), radom(rand(1)+x*62), radom(rand(1)+x*80), radom(rand(1)+x*20), radom(rand(1)+x*60));
+    }
+}
 
     cout << "main" << endl;
 
