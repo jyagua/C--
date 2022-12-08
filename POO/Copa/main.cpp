@@ -79,6 +79,8 @@ int main(){
     int g, d, at;
     //  AUXILIOS NO MENU
     int p, e, j;
+
+    int y;
     string equipenome;
     //PARTIDAS PADRAO
     partida jogo1;
@@ -284,7 +286,102 @@ int main(){
     MENUEQUIPES:
     if(x == '2'){
 
+        system("clear||cls");
 
+        cout << "         BEM VINDO AO MENU DE TIMES           " << endl;
+        cout << "==============================================" << endl;
+        cout << "Digite 1 para ver todos os times              " << endl;
+        cout << "Digite 2 para ver um time e seus jogadores    " << endl;
+        cout << "Digite 3 para criar um time                   " << endl;
+        cout << "Digite 4 para voltar ao menu principal        " << endl;
+
+        cin >> e;
+
+        if(e == 1){
+            system("clear||cls");
+
+            cout << "--- " << afo.getNome() << endl << "--- " << flo.getNome() << endl << "--- " << lag.getNome() << endl << "--- " << toc.getNome() << endl;
+            for(int i = 0;i<a;i++){
+                cout << "--- " << usuario[i].getNome() << endl;
+            }
+            cout << "Insira qualquer caractere para voltar ao menu de times" << endl;
+            cin >> trow;
+            goto MENUEQUIPES;
+
+        }else if(e == 2){
+
+            system("clear||cls");
+
+            cout << "Escolha o equipe que voce quer ver ou digite 1 para voltar ao menu de times: " << endl;
+            cin >> equipenome;
+            if(equipenome == "1"){
+                goto MENUEQUIPES;
+            }else{
+                if(equipenome == "Floresta"){
+                    flo.printequipe();
+                    y=1;
+                }else if(equipenome == "Afogados"){
+                    afo.printequipe();
+                    y=1;
+                }else if(equipenome == "Tocantinopolis"){
+                    toc.printequipe();
+                    y=1;
+                }else if(equipenome == "Lagarto"){
+                    lag.printequipe();
+                    y=1;
+                }else{
+                    for(int i=0;i<a;i++){
+                        y = escolha(equipenome, usuario[i]);
+                        if(y == 1){
+                            usuario[i].printequipe();
+                            break;
+                        }
+                    }
+                }
+                if(y==1){
+                    cout << "Aperte 1 para voltar ao menu de times" << endl;
+
+                    cin >> x;
+
+                    if(x == '1'){
+                        goto MENUEQUIPES;
+                    }
+                }else{
+                    cout << "Nome errado!" << endl;
+                    goto MENUEQUIPES;
+                }
+            }
+
+
+        }else if(e == 3){
+            cout << endl;
+            cout << "Digite o nome do seu equipe ou digite 1 para voltar ao menu de times: " << endl;
+            cin >> equipenome;
+
+            if(a<10){
+
+                if(equipenome == "1"){
+
+                    goto MENUEQUIPES;
+
+                }else{
+
+                    usuario[a].setNome(equipenome);
+                    a++;
+                    cout << equipenome << " criado!";
+                }
+            }else{
+                cout << "Voce atingiu o limite de equipes!!" << endl;
+
+            }
+            goto MENUEQUIPES;
+
+
+        }else if(e == 4){
+            e = 0;
+            goto MENU;
+
+        }
 
 
 
@@ -299,7 +396,16 @@ int main(){
     MENUJOGADORES:
     if(x == '3'){
 
+        system("clear||cls");
 
+        cout << "        BEM VINDO AO MENU DE JOGADORES        " << endl;
+        cout << "==============================================" << endl;
+        cout << "Digite 1 para ver todos os times              " << endl;
+        cout << "Digite 2 para ver um time e seus jogadores    " << endl;
+        cout << "Digite 3 para criar um time                   " << endl;
+        cout << "Digite 4 para voltar ao menu principal        " << endl;
+
+        cin >> e;
 
 
 
