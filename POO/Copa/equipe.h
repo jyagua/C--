@@ -71,7 +71,7 @@ class equipe{
     }
 
     void printequipe(){
-        cout << "Equipe:       " << getNome()              << endl << "Vitorias: " << getVitorias() << "|Empates: " << getEmpates() << "|Derrotas: " << getDerrotas() << "================" << endl;
+        cout << "Equipe:       " << getNome()              << endl << "Vitorias: " << getVitorias() << "|Empates: " << getEmpates() << "|Derrotas: " << getDerrotas() << endl << "================" << endl;
         cout << "Goleiro:      " << goleiro.getNome()      << endl << "Camisa: " << goleiro.getCamisa()      << "| Gols: " << goleiro.getGols()      << "| Habilidade: " << goleiro.somaHabilidade()      << endl << "======================================================" << endl;
         cout << "Ala Esquerda: " << atacantes[0].getNome() << endl << "Camisa: " << atacantes[0].getCamisa() << "| Gols: " << atacantes[0].getGols() << "| Habilidade: " << atacantes[0].somaHabilidade() << endl << "======================================================" << endl;
         cout << "Ala Direita:  " << atacantes[1].getNome() << endl << "Camisa: " << atacantes[1].getCamisa() << "| Gols: " << atacantes[1].getGols() << "| Habilidade: " << atacantes[1].somaHabilidade() << endl << "======================================================" << endl;
