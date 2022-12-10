@@ -91,7 +91,7 @@ class equipe{
     void setFixo(jogadorDefesa a){
         defensor[0] = a;
     }
-    void setAla(jogadorDefesa b){
+    void setPivo(jogadorDefesa b){
         defensor[1] = b;
     }
     

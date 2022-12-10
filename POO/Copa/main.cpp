@@ -78,9 +78,11 @@ int main(){
     //  AUXILIOS DE JOGADORES
     int g=0, d=0, at=0, total;
     //  AUXILIOS NO MENU
-    int p, e, j;
-
+    char p, e, j;
+    //CONFIRMACAO DE QUE ACHOU UMA CRIACAO
     int y;
+    //SELECAO DE POSICAO
+    int def, atc;
 
     int player;
     float h;
@@ -158,6 +160,7 @@ int main(){
    }
     x=0;
     MENUPARTIDAS:
+{
     if(x == '1'){
         
         system("clear||cls");
@@ -171,7 +174,7 @@ int main(){
 
         cin >> p;
 
-        if(p == 1){
+        if(p == '1'){
             jogo1.printPartida();
             for(int i=0;i<10;i++){
                 if ((jogos[i].getDia() != 30)&&(jogos[i].getMes() != 2)){
@@ -182,12 +185,12 @@ int main(){
             }
             cout << "Insira qualquer caractere para voltar ao menu de partidas" << endl;
             cin >> trow;
-            p = 0;
+            p = '0';
             goto MENUPARTIDAS;
 
 
 
-        }else if(p == 2){
+        }else if(p == '2'){
             for(int i=b;i<b+1;i++){
                 cout << "Digite o dia da partida" << endl;
                 cin >> c;
@@ -242,52 +245,62 @@ int main(){
             b++;
             cout << "Insira qualquer caractere para voltar ao menu de partidas" << endl;
             cin >> trow;
-            p = 0;
+            p = '0';
             goto MENUPARTIDAS;
 
 
 
-        }else if(p == 3){
-            cout << "Digite o dia da partida que voce procura" << endl;
-                cin >> c;
+        }else if(p == '3'){
+            y = 0;
+            cout << "Digite o dia da partida que voce procura ou digite 0 para voltar ao menu de partidas" << endl;
+            cin >> c;
 
+            if(c == 0){
+                    goto MENUPARTIDAS;
+            }
 
-                cout << "Digite o mes da partida que voce procura" << endl;
-                cin >> c2;
+            cout << "Digite o mes da partida que voce procura" << endl;
+            cin >> c2;
 
-                for(int i = 0;i<10;i++){
-                    if ((c == jogos[i].getDia())&&(c2 == jogos[i].getMes())){
-                        cout << endl;
-                        jogos[i].printPartida();
-                    }
+            if((c == jogo1.getDia())&&(c2 == jogo1.getMes())){
+                y = 1;
+                cout << endl;
+                jogo1.printPartida();
+            }
+
+            for(int i = 0;i<10;i++){
+                if ((c == jogos[i].getDia())&&(c2 == jogos[i].getMes())){
+                    y = 1;
+                    cout << endl;
+                    jogos[i].printPartida();
                 }
-            cout << "Insira qualquer caractere para voltar ao menu de partidas" << endl;
-            cin >> trow;
-            p = 0;
-            goto MENUPARTIDAS;
+            }
+                
+            if(y == 1){
+                cout << "Insira qualquer caractere para voltar ao menu de partidas" << endl;
+                cin >> trow;
+                p = '0';
+                goto MENUPARTIDAS;
+            }else{
+                cout << "Nao ah nenhuma partida nessa data! Insira algum caractere para tentar novamente" << endl;
+                cin >> trow;
+                goto MENUPARTIDAS;
+            }
 
 
-
-        }else if(p == 4){
-            p = 0;
+        }else if(p == '4'){
+            p = '0';
             goto MENU;
-
-
 
         }
 
-
-
-
-
-
-
     }
-
+}
 
 
     x=0;
     MENUEQUIPES:
+{    
     if(x == '2'){
 
         system("clear||cls");
@@ -301,7 +314,7 @@ int main(){
 
         cin >> e;
 
-        if(e == 1){
+        if(e == '1'){
             system("clear||cls");
 
             cout << "--- " << afo.getNome() << endl << "--- " << flo.getNome() << endl << "--- " << lag.getNome() << endl << "--- " << toc.getNome() << endl;
@@ -312,13 +325,13 @@ int main(){
             cin >> trow;
             goto MENUEQUIPES;
 
-        }else if(e == 2){
+        }else if(e == '2'){
 
             system("clear||cls");
 
-            cout << "Escolha o equipe que voce quer ver ou digite 1 para voltar ao menu de times: " << endl;
+            cout << "Escolha o equipe que voce quer ver ou digite 0 para voltar ao menu de times: " << endl;
             cin >> equipenome;
-            if(equipenome == "1"){
+            if(equipenome == "0"){
                 goto MENUEQUIPES;
             }else{
                 if(equipenome == "Floresta"){
@@ -355,14 +368,14 @@ int main(){
             }
 
 
-        }else if(e == 3){
+        }else if(e == '3'){
             cout << endl;
-            cout << "Digite o nome do seu equipe ou digite 1 para voltar ao menu de times: " << endl;
+            cout << "Digite o nome do seu time ou digite 0 para voltar ao menu de times: " << endl;
             cin >> equipenome;
 
             if(a<10){
 
-                if(equipenome == "1"){
+                if(equipenome == "0"){
 
                     goto MENUEQUIPES;
 
@@ -373,13 +386,13 @@ int main(){
                     cout << equipenome << " criado!";
                 }
             }else{
-                cout << "Voce atingiu o limite de equipes!!" << endl;
+                cout << "Voce atingiu o limite de times!!" << endl;
 
             }
             goto MENUEQUIPES;
 
 
-        }else if(e == 4){
+        }else if('e' == 4){
             e = 0;
             goto MENU;
 
@@ -391,6 +404,7 @@ int main(){
 
 
     }
+}
 
 
 
@@ -409,7 +423,7 @@ int main(){
 
         cin >> e;
 
-        if(e == 1){
+        if(e == '1'){
             cout << endl << "Diga o primeiro nome do jogador: " << endl;
             cin >> jogadornome;
             cout << "Digite 1 para criar um goleiro;" << endl;
@@ -481,7 +495,7 @@ int main(){
             }
 
 
-        }else if(e == 2){
+        }else if(e == '2'){
             for(int i = 0; i<g;i++){
                 if(gol[i].getNome() != "Cassio"){
                     cout << "Goleiro " << gol[i].getNome() << endl;
@@ -506,7 +520,8 @@ int main(){
             
 
 
-        }else if(e == 3){
+        }else if(e == '3'){
+            y=0;
             cout << "Digite o nome do jogador que voce vai contratar: " << endl;
             cin >> jogadornome;
             for(int i = 0; i<g;i++){
@@ -515,41 +530,68 @@ int main(){
                     cin >> equipenome;
                     if(equipenome == "Floresta"){
                         flo.setGoleiro(gol[i]);
+                        y=1;
                     }else if(equipenome == "Afogados"){
                         afo.setGoleiro(gol[i]);
+                        y=1;
                     }else if(equipenome == "Tocantinopolis"){
                         toc.setGoleiro(gol[i]);
+                        y=1;
                     }else if(equipenome == "Lagarto"){
                         lag.setGoleiro(gol[i]);
+                        y=1;
                     }else{
                         for(int i=0;i<a;i++){
                             int in = escolha(equipenome, usuario[i]);
                             if(in == 1){
                                 usuario[i].setGoleiro(gol[i]);
-                                break;
+                                y=1;
                             }
                         }
                     }
                 }
+                
             }
             for(int i = 0; i<d;i++){
                 if(zag[i].getNome() == jogadornome){
+                    cout << "Digite 1 para ele ser um Fixo ou 2 para ele ser um Pivo" << endl;
+                    cin >> def;
                     cout << "Digite o nome do time que voce vai colocar o jogador: " << endl;
                     cin >> equipenome;
-                    if(equipenome == "Floresta"){
-                        flo.setFixo(zag[i]);
-                    }else if(equipenome == "Afogados"){
-                        afo.setFixo(zag[i]);
-                    }else if(equipenome == "Tocantinopolis"){
-                        toc.setFixo(zag[i]);
-                    }else if(equipenome == "Lagarto"){
-                        lag.setFixo(zag[i]);
-                    }else{
-                        for(int i=0;i<a;i++){
-                            int in = escolha(equipenome, usuario[i]);
-                            if(in == 1){
-                                usuario[i].setFixo(zag[i]);
-                                break;
+                    if(def == 1){
+                        if(equipenome == "Floresta"){
+                            flo.setFixo(zag[i]);
+                        }else if(equipenome == "Afogados"){
+                            afo.setFixo(zag[i]);
+                        }else if(equipenome == "Tocantinopolis"){
+                            toc.setFixo(zag[i]);
+                        }else if(equipenome == "Lagarto"){
+                            lag.setFixo(zag[i]);
+                        }else{
+                            for(int i=0;i<a;i++){
+                                int in = escolha(equipenome, usuario[i]);
+                                if(in == 1){
+                                    usuario[i].setFixo(zag[i]);
+                                    break;
+                                }
+                            }
+                        }
+                    }else if(def == 2){
+                        if(equipenome == "Floresta"){
+                            flo.setPivo(zag[i]);
+                        }else if(equipenome == "Afogados"){
+                            afo.setPivo(zag[i]);
+                        }else if(equipenome == "Tocantinopolis"){
+                            toc.setPivo(zag[i]);
+                        }else if(equipenome == "Lagarto"){
+                            lag.setPivo(zag[i]);
+                        }else{
+                            for(int i=0;i<a;i++){
+                                int in = escolha(equipenome, usuario[i]);
+                                if(in == 1){
+                                    usuario[i].setPivo(zag[i]);
+                                    break;
+                                }
                             }
                         }
                     }
@@ -557,32 +599,60 @@ int main(){
             }
             for(int i = 0; i<at;i++){
                 if(ata[i].getNome() == jogadornome){
+                    cout << "Digite 1 para ele ser um Ala Direita ou 2 para ele ser um Ala Esquerda" << endl;
+                    cin >> atc;
                     cout << "Digite o nome do time que voce vai colocar o jogador: " << endl;
                     cin >> equipenome;
-                    if(equipenome == "Floresta"){
-                        flo.setDireita(ata[i]);
-                    }else if(equipenome == "Afogados"){
-                        afo.setDireita(ata[i]);
-                    }else if(equipenome == "Tocantinopolis"){
-                        toc.setDireita(ata[i]);
-                    }else if(equipenome == "Lagarto"){
-                        lag.setDireita(ata[i]);
-                    }else{
-                        for(int i=0;i<a;i++){
-                            int in = escolha(equipenome, usuario[i]);
-                            if(in == 1){
-                                usuario[i].setDireita(ata[i]);
-                                break;
+                    if(atc == 1){
+                        if(equipenome == "Floresta"){
+                            flo.setDireita(ata[i]);
+                        }else if(equipenome == "Afogados"){
+                            afo.setDireita(ata[i]);
+                        }else if(equipenome == "Tocantinopolis"){
+                            toc.setDireita(ata[i]);
+                        }else if(equipenome == "Lagarto"){
+                            lag.setDireita(ata[i]);
+                        }else{
+                            for(int i=0;i<a;i++){
+                                int in = escolha(equipenome, usuario[i]);
+                                if(in == 1){
+                                    usuario[i].setDireita(ata[i]);
+                                    break;
+                                }
+                            }
+                        }
+                    }else if(atc == 2){
+                        if(equipenome == "Floresta"){
+                            flo.setEsquerda(ata[i]);
+                        }else if(equipenome == "Afogados"){
+                            afo.setEsquerda(ata[i]);
+                        }else if(equipenome == "Tocantinopolis"){
+                            toc.setEsquerda(ata[i]);
+                        }else if(equipenome == "Lagarto"){
+                            lag.setEsquerda(ata[i]);
+                        }else{
+                            for(int i=0;i<a;i++){
+                                int in = escolha(equipenome, usuario[i]);
+                                if(in == 1){
+                                    usuario[i].setEsquerda(ata[i]);
+                                    break;
+                                }
                             }
                         }
                     }
                 }
             }
+            
+            if(y == 0){
+                    cout << "Nenhum time com esse nome! Insira qualquer caractere e tente novamente" << endl;
+                    goto MENUJOGADORES;
+                }
+            
             cout << "A contratacao deu certo! Insira qualquer caractere para voltar ao menu de jogadores: " << endl;
             cin >> trow;
             goto MENUJOGADORES;
             
-        }else if(e == 4){
+        }else if(e == '4'){
             e = 0;
             goto MENU;
         }
