@@ -8,6 +8,38 @@
 #include "partidas.h"
 using namespace std;
 
+void somarcasa(partida x, int y){
+    if(y == 1){
+        x.equipeCasa.goleiro.somaGols();
+    }else if(y == 2){
+        x.equipeCasa.defensor[0].somaGols();
+    }else if(y == 3){
+        x.equipeCasa.defensor[1].somaGols();
+    }else if(y == 4){
+        x.equipeCasa.atacantes[0].somaGols();
+    }else if(y == 5){
+        x.equipeCasa.atacantes[1].somaGols();
+    }
+
+}
+
+void somarvisita(partida x, int y){
+    if(y == 1){
+        x.equipeVisitante.goleiro.somaGols();
+    }else if(y == 2){
+        x.equipeVisitante.defensor[0].somaGols();
+    }else if(y == 3){
+        x.equipeVisitante.defensor[1].somaGols();
+    }else if(y == 4){
+        x.equipeVisitante.atacantes[0].somaGols();
+    }else if(y == 5){
+        x.equipeVisitante.atacantes[1].somaGols();
+    }
+
+}
+
+
+
 int escolha(string nome, equipe tal){
     if(tal.getNome() == nome){
         return 1;
@@ -73,7 +105,7 @@ int main(){
     
 
     char x, trow;
-    //     A == AUXILIO DE CRIACAO DE EQUIPES   B == AUXILIO DE CRIACAO DE PARTIDAS
+    //     A == AUXILIO DE CRIACAO DE EQUIPES   B == AUXILIO DE CRIACAO DE PARTIDAS C == DIA C2 == MES
     int a = 0, b = 0, c = 0, c2;
     //  AUXILIOS DE JOGADORES
     int g=0, d=0, at=0, total;
@@ -83,6 +115,8 @@ int main(){
     int y;
     //SELECAO DE POSICAO
     int def, atc;
+    //AJUDAR A DIFERENCIAR QUEM FEZ GOLS
+    int g0, d0, d1, a0, a1;
 
     int player;
     float h;
@@ -132,7 +166,6 @@ int main(){
 
    MENU:
    system("clear||cls");
-   //TEMOS QUE MUDAR O MENU COMPLETAMENTE
    cout << "   BEM VINDO AO BOMBA PATCH C++ EDITION :)   " << endl;
    cout << "=============================================" << endl;
    cout << "|              MENU PRINCIPAL               |" << endl;
@@ -144,7 +177,6 @@ int main(){
 
    cout << "Digite 0 para parar o programa" << endl;
 
-    /*x = getch();*/
     cin >> x;
 
    if(x == '0'){
@@ -392,16 +424,9 @@ int main(){
             goto MENUEQUIPES;
 
 
-        }else if('e' == 4){
-            e = 0;
+        }else if(e == '4'){
             goto MENU;
-
         }
-
-
-
-
-
 
     }
 }
@@ -410,6 +435,7 @@ int main(){
 
     x=0;
     MENUJOGADORES:
+{
     if(x == '3'){
 
         system("clear||cls");
@@ -662,22 +688,94 @@ int main(){
 
 
     }
+}
 
-
-
+{
     x=0;
     INICIARPARTIDA:
     if(x == '4'){
 
+        system("clear||cls");
+        y = 0;
+        cout << "Partidas disponiveis: " << endl;
+        jogo1.printPartida();
+        for(int i=0;i<10;i++){
+            if ((jogos[i].getDia() != 30)&&(jogos[i].getMes() != 2)){
+                cout << endl;
+                jogos[i].printPartida();
+            }
+            
+        }
 
+        cout << "Digite o dia da partida que voce quer iniciar ou digite 0 para voltar ao menu: " << endl;
+        cin >> c;
+        if(c == 0){
+            goto MENU;
+        }
+        cout << "Digite o mes da partida que voce quer iniciar: " << endl;
+        cin >> c2;
 
+        if((c == jogo1.getDia())&&(c2 == jogo1.getMes())){
+            y = 1;
+            goto JOGO1P;
+        }else{
+            for(int i=0;i<10;i++){
+                if ((jogos[i].getDia() == c)&&(jogos[i].getMes() == c2)){
+                    y = 1;
+                    /*goto JOGOSP;*/
+                }
+            }
+        }
+        if(y == 0){
+            cout << "Nao ah partida nesse dia e mes!! Insira qualquer caractere para tentar novamente" << endl;
+            cin >> trow;
+            goto INICIARPARTIDA;
+        }
 
 
 
 
     }
+}
 
+    x = 0;
+    JOGO1P:
+    if(x == '4'){
+        
+        system("clear||cls");
+        y = 0;
+        cout << "A partida comecou! Digite 1 para um gol do time de casa, 2 para um gol do time visitante e 0 para acabar a partida!" << endl;
+        cin >> trow;
 
+        if(trow == '1'){
+            jogo1.addGolcasa();
+            cout << "Lindo gol! Digite a posicao do jogador que fez o gol: " << endl;
+            cout << "1 para o goleiro" << endl
+            << "2 para o fixo (zagueiro)" << endl
+            << "3 para o pivo (zagueiro)" << endl
+            << "4 para o ala esquerda (atacante)" << endl
+            << "5 para o ala direita (atacante)" << endl;
+            cin >> trow;
+            somarcasa(jogo1, trow);
+            
+        }else if(trow == '2'){
+            jogo1.addGolvisita();
+            cout << "Lindo gol! Digite a posicao do jogador que fez o gol: " << endl;
+            cout << "1 para o goleiro" << endl
+            << "2 para o fixo (zagueiro)" << endl
+            << "3 para o pivo (zagueiro)" << endl
+            << "4 para o ala esquerda (atacante)" << endl
+            << "5 para o ala direita (atacante)" << endl;
+            cin >> trow;
+            somarvisita(jogo1, trow);
+        }else{
+            cout << "Partida encerrada! Insira qualquer caractere para voltar ao menu de partidas: " << endl;
+            cin >> trow;
+            goto INICIARPARTIDA;
+        }
+        goto JOGO1P;
+
+    }
 
 
 
