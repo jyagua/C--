@@ -36,31 +36,31 @@ void somarvisitaU(partida x[], int i, int y){
     }
 }
 
-void somarcasa(partida x, int y){
-    if(y == 1){
+void somarcasa(partida x, char y){
+    if(y == '1'){
         x.equipeCasa.goleiro.somaGols();
-    }else if(y == 2){
+    }else if(y == '2'){
         x.equipeCasa.defensor[0].somaGols();
-    }else if(y == 3){
+    }else if(y == '3'){
         x.equipeCasa.defensor[1].somaGols();
-    }else if(y == 4){
+    }else if(y == '4'){
         x.equipeCasa.atacantes[0].somaGols();
-    }else if(y == 5){
+    }else if(y == '5'){
         x.equipeCasa.atacantes[1].somaGols();
     }
 
 }
 
-void somarvisita(partida x, int y){
-    if(y == 1){
+void somarvisita(partida x, char y){
+    if(y == '1'){
         x.equipeVisitante.goleiro.somaGols();
-    }else if(y == 2){
+    }else if(y == '2'){
         x.equipeVisitante.defensor[0].somaGols();
-    }else if(y == 3){
+    }else if(y == '3'){
         x.equipeVisitante.defensor[1].somaGols();
-    }else if(y == 4){
+    }else if(y == '4'){
         x.equipeVisitante.atacantes[0].somaGols();
-    }else if(y == 5){
+    }else if(y == '5'){
         x.equipeVisitante.atacantes[1].somaGols();
     }
 
@@ -164,6 +164,8 @@ int main(){
 
     int player;
 
+    char gols;
+
     float h;
     string equipenome;
     string jogadornome;
@@ -181,8 +183,7 @@ int main(){
     jogadorDefesa zag[5];
     jogadorAtaque ata[5];
     //ATRIBUINDO equipeS AS PARTIDAS
-    jogo1.setequipecasa(afo);
-    jogo1.setequipevisitante(flo);
+    
 
     jogo1.setDia(12);
     jogo1.setMes(5);
@@ -207,6 +208,8 @@ int main(){
     }
 }
 
+    jogo1.setequipecasa(afo);
+    jogo1.setequipevisitante(flo);
     cout << "main" << endl;
    MENU:
    system("clear||cls");
@@ -798,8 +801,22 @@ int main(){
             << "4 para o ala esquerda (atacante)" << endl
             << "5 para o ala direita (atacante)" << endl;
             cin >> trow;
-            somarcasa(jogo1, trow);
-            somarjogador(afo, trow);
+            //somarcasa(jogo1, trow);
+            //somarjogador(afo, trow);
+            if(trow == '1'){
+                jogo1.equipeCasa.goleiro.somaGols();
+            }else if(trow == '2'){
+                jogo1.equipeCasa.defensor[0].somaGols();
+            }else if(trow == '3'){
+                jogo1.equipeCasa.defensor[1].somaGols();
+            }else if(trow == '4'){
+                jogo1.equipeCasa.atacantes[0].somaGols();
+            }else if(trow == '5'){
+                jogo1.equipeCasa.atacantes[1].somaGols();
+            }
+
+
+
             
         }else if(trow == '2'){
             jogo1.addGolvisita();
@@ -810,28 +827,38 @@ int main(){
             << "4 para o ala esquerda (atacante)" << endl
             << "5 para o ala direita (atacante)" << endl;
             cin >> trow;
-            somarvisita(jogo1, trow);
-            somarjogador(flo, trow);
+            //somarvisita(jogo1, trow);
+            //somarjogador(flo, trow);
+            if(trow == '1'){
+                jogo1.equipeVisitante.goleiro.somaGols();
+            }else if(trow == '2'){
+                jogo1.equipeVisitante.defensor[0].somaGols();
+            }else if(trow == '3'){
+                jogo1.equipeVisitante.defensor[1].somaGols();
+            }else if(trow == '4'){
+                jogo1.equipeVisitante.atacantes[0].somaGols();
+            }else if(trow == '5'){
+                jogo1.equipeVisitante.atacantes[1].somaGols();
+            }
+
+
+
+
         }else{
             cout << "Partida encerrada! Insira qualquer caractere para voltar ao menu de partidas: " << endl;
             cin >> trow;
             if(jogo1.getPlacarCasa() < jogo1.getPlacarVisitante()){
                 jogo1.equipeVisitante.somaVitorias();
-                flo.somaVitorias();
                 jogo1.equipeCasa.somaDerrotas();
-                afo.somaDerrotas();
             }else if(jogo1.getPlacarCasa() > jogo1.getPlacarVisitante()){
                 jogo1.equipeCasa.somaVitorias();
-                afo.somaVitorias();
                 jogo1.equipeVisitante.somaDerrotas();
-                flo.somaDerrotas();
             }else{
                 jogo1.equipeCasa.somaEmpates();
                 jogo1.equipeVisitante.somaEmpates();
-                afo.somaEmpates();
-                flo.somaEmpates();
             }
-
+            afo = jogo1.equipeCasa;
+            flo = jogo1.equipeVisitante;
             goto INICIARPARTIDA;
         }
         goto JOGO1P;
@@ -856,8 +883,21 @@ int main(){
             << "4 para o ala esquerda (atacante)" << endl
             << "5 para o ala direita (atacante)" << endl;
             cin >> trow;
-            somarcasaU(jogos, par, trow);
-            
+            //somarcasaU(jogos, par, trow);
+            if(trow == '1'){
+                jogos[par].equipeCasa.goleiro.somaGols();
+            }else if(trow == '2'){
+                jogos[par].equipeCasa.defensor[0].somaGols();
+            }else if(trow == '3'){
+                jogos[par].equipeCasa.defensor[1].somaGols();
+            }else if(trow == '4'){
+                jogos[par].equipeCasa.atacantes[0].somaGols();
+            }else if(trow == '5'){
+                jogos[par].equipeCasa.atacantes[1].somaGols();
+            }
+
+
+
         }else if(trow == '2'){
             jogos[par].addGolvisita();
             cout << "Lindo gol! Digite a posicao do jogador que fez o gol: " << endl;
@@ -867,7 +907,21 @@ int main(){
             << "4 para o ala esquerda (atacante)" << endl
             << "5 para o ala direita (atacante)" << endl;
             cin >> trow;
-            somarvisitaU(jogos, par, trow);
+            //somarvisitaU(jogos, par, trow);
+            if(trow == '1'){
+                jogos[par].equipeVisitante.goleiro.somaGols();
+            }else if(trow == '2'){
+                jogos[par].equipeVisitante.defensor[0].somaGols();
+            }else if(trow == '3'){
+                jogos[par].equipeVisitante.defensor[1].somaGols();
+            }else if(trow == '4'){
+                jogos[par].equipeVisitante.atacantes[0].somaGols();
+            }else if(trow == '5'){
+                jogos[par].equipeVisitante.atacantes[1].somaGols();
+            }
+
+
+
         }else{
             cout << "Partida encerrada! Insira qualquer caractere para voltar ao menu de partidas: " << endl;
             cin >> trow;
@@ -881,6 +935,39 @@ int main(){
                 jogos[par].equipeCasa.somaEmpates();
                 jogos[par].equipeVisitante.somaEmpates();
             }
+
+            if(jogos[par].equipeCasa.getNome() == flo.getNome()){
+                flo = jogos[par].equipeCasa;
+            }else if(jogos[par].equipeCasa.getNome() == afo.getNome()){
+                afo = jogos[par].equipeCasa;
+            }else if(jogos[par].equipeCasa.getNome() == toc.getNome()){
+                toc = jogos[par].equipeCasa;
+            }else if(jogos[par].equipeCasa.getNome() == lag.getNome()){
+                lag = jogos[par].equipeCasa;
+            }else{
+                for(int i = 0; i < 10; i++){
+                    if(usuario[i].getNome() == jogos[par].equipeCasa.getNome()){
+                        usuario[i] = jogos[par].equipeCasa;
+                    }
+                }
+            }
+
+            if(jogos[par].equipeVisitante.getNome() == flo.getNome()){
+                flo = jogos[par].equipeVisitante;
+            }else if(jogos[par].equipeVisitante.getNome() == afo.getNome()){
+                afo = jogos[par].equipeVisitante;
+            }else if(jogos[par].equipeVisitante.getNome() == toc.getNome()){
+                toc = jogos[par].equipeVisitante;
+            }else if(jogos[par].equipeVisitante.getNome() == lag.getNome()){
+                lag = jogos[par].equipeVisitante;
+            }else{
+                for(int i = 0; i < 10; i++){
+                    if(usuario[i].getNome() == jogos[par].equipeVisitante.getNome()){
+                        usuario[i] = jogos[par].equipeVisitante;
+                    }
+                }
+            }
+
 
             goto INICIARPARTIDA;
         }
